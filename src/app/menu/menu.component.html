@@ -1,1 +1,24 @@
-<p>menu works!</p>
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-4" *ngFor="let rd of restaurantData">
+
+            <div class="foodbox mt-3 mb-3">
+                <img src="{{rd.image}}">
+                <h1>{{rd.businessname}}</h1>
+                <p id="location">{{rd.location}}</p>
+                <p id="cost">Cost for Two - {{rd.averagecost | currency:'INR'}}</p>
+                <p id="reviews">Reviews - ({{rd.reviews}})</p>
+                <p id="phone"> Contact - {{rd.phone}}</p>
+                <br/>
+                <a class="buybtn" [routerLink]="['/menu',rd.id]">Order Now &nbsp;<i class="bi bi-bag"></i></a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>

@@ -5,3 +5,8 @@
     text-decoration: underline;
 }
 
+#website-name
+{
+    color: var(--primary-color);
+}
+

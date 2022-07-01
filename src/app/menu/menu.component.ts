@@ -7,11 +7,18 @@ import { OrderDetailsServiceService } from 'src/app/order-details-service.servic
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+ 
+  public restaurantDetails: any[]= [];
+  public totalRestaurants: any;
 
   constructor(private service:OrderDetailsServiceService) { }
-  restaurantData:any;
-  ngOnInit(): void {
-    this.restaurantData = this.service.RestaurantDetails;
+
+  ngOnInit() {
+    this.service.getRestaurantDetails()
+   .subscribe(data => this.restaurantDetails= data.Result);
+    this.service.getRestaurantDetails()
+      .subscribe(data => this.totalRestaurants=data.totalRestaurants);
+    console.log(this.totalRestaurants);
   }
 
 }

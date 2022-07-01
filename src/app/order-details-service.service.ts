@@ -1,78 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http'
+import { IRestaurantDetails } from './restaurantDetails';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderDetailsServiceService {
 
-  constructor() { }
+  private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
+  constructor(private http:HttpClient) { }
 
-  //restaurantdetails
-  RestaurantDetails = [
-    {
-      reviews: 50,
-      parkinglot: false,
-      location: "Abraham Adesanya",
-      phone: "08145290260",
-      averagecost: 700,
-      image: "https://res.cloudinary.com/jobizil/image/upload/v1603060257/images/restaurant/egbjeb2qrtabqufx9yen.jpg",
-      imageId: "images/restaurant/egbjeb2qrtabqufx9yen",
-      businessname: "FoodFusion",
-      menu: "5f5eccf4e923d0aca3e7d447",
-      foodMenu: []
-    },
-    {
-      reviews: 48,
-      parkinglot: false,
-      location: "Abraham Adesanya",
-      phone: "08145290260",
-      averagecost: 700,
-      image: "https://res.cloudinary.com/jobizil/image/upload/v1603060323/images/restaurant/bzciailqusg6mp73j428.jpg",
-      imageId: "images/restaurant/bzciailqusg6mp73j428",
-      businessname: "Hathaway Foods",
-      menu: "5f5eccf4e923d0aca3e7d44c",
-      foodMenu: [],
-    },
-    {
-      reviews: 42,
-     parkinglot: false,
-      location: "Badore",
-      phone: "08145290260",
-      averagecost: 700,
-      image: "https://res.cloudinary.com/jobizil/image/upload/v1603060357/images/restaurant/kzcinie4fbphqtbizbpd.jpg",
-      imageId: "images/restaurant/kzcinie4fbphqtbizbpd",
-      businessname: "Sugarbee Kitchen",
-      menu: "5f5eccf4e923d0aca3e7d449",
-      foodMenu: []
-    },
-    {
-      reviews: 34,
-      parkinglot: false,
-      location: "Badore",
-      phone: "08145290260",
-      averagecost: 700,
-      image: "https://res.cloudinary.com/jobizil/image/upload/v1603060385/images/restaurant/iyped2pb5clel4fu1wu6.jpg",
-      imageId: "images/restaurant/iyped2pb5clel4fu1wu6",
-      businessname: "Pot a Soup Kitchen",
-      menu: "5f5eccf4e923d0aca3e7d449",
-      foodMenu: []
-      
-    },
-    {
-      reviews: 34,
-      parkinglot: false,
-      location: "Ajah",
-      phone: "08145290260",
-      averagecost: 700,
-      image: "https://res.cloudinary.com/jobizil/image/upload/v1603060411/images/restaurant/pmmgqv7enms4sf5pqhkd.jpg",
-      imageId: "images/restaurant/pmmgqv7enms4sf5pqhkd",
-      businessname: "AreaChops",
-      menu: "5f5eccf4e923d0aca3e7d44a",
-      foodMenu: []
-    },
-    
-  ]
+  getRestaurantDetails(): Observable<any>
+  {
+    return this.http.get(this.url);
+  }
 
   // fooddetails 
 

@@ -7,22 +7,16 @@
       <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
         <div class="input">
           <input placeholder="Username" id="username" type="text" formControlName="username" autocomplete="username">
-          <div *ngIf="loginFormControls['username'].touched && loginFormControls['username'].invalid"
-            class="alert alert-danger">
             <div *ngIf="loginFormControls['username'].errors && loginFormControls['username'].errors['required']">
               username is required.</div>
           </div>
           <span class="spin"></span>
-        </div>
         <div class="input">
           <input placeholder="password" id="passwordNo" type="password" formControlName="password">
-          <div *ngIf="loginFormControls['password'].touched && loginFormControls['password'].invalid"
-            class="alert alert-danger">
             <div *ngIf="loginFormControls['password'].errors && loginFormControls['password'].errors['required']">
               password is required.</div>
           </div>
           <span class="spin"></span>
-        </div>
         <div class="button login">
           <button id="login">Login</button>
         </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderDetailsServiceService } from 'src/app/order-details-service.service';
+import { OrderDetailsServiceService } from 'src/Services/restaurant-service';
+import { IRestaurantDetails } from '../restaurantDetails';
 
 @Component({
   selector: 'app-menu',
@@ -8,17 +9,13 @@ import { OrderDetailsServiceService } from 'src/app/order-details-service.servic
 })
 export class MenuComponent implements OnInit {
  
-  public restaurantDetails: any[]= [];
-  public totalRestaurants: any;
+  public restaurantDetails: IRestaurantDetails[] = [];
 
   constructor(private service:OrderDetailsServiceService) { }
 
   ngOnInit() {
     this.service.getRestaurantDetails()
    .subscribe(data => this.restaurantDetails= data.Result);
-    this.service.getRestaurantDetails()
-      .subscribe(data => this.totalRestaurants=data.totalRestaurants);
-    console.log(this.totalRestaurants);
   }
 
 }

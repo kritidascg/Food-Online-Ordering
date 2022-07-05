@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,17 +11,18 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   hide: boolean = false;
+  loginForm: any;
 
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
-  }
+    this.loginForm = new FormGroup({
+          'username':new FormControl(null,[Validators.required, Validators.email]),
+          'password':new FormControl(null,[Validators.required, Validators.minLength(6)]),
+      })
+}
 
-  loginForm: FormGroup = this.fb.group({
-    username: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
-  })
 
   get loginFormControls(){
 

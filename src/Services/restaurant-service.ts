@@ -5,9 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class OrderDetailsServiceService {
+export class RestaurantService {
 
   private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
+  private signUpUrl: string = "https://foodbukka.herokuapp.com/api/v1/auth/register";
   constructor(private http:HttpClient) { }
 
   getRestaurantDetails(): Observable<any>
@@ -15,6 +16,7 @@ export class OrderDetailsServiceService {
     return this.http.get(this.url);
   }
 
+ 
   // fooddetails 
 
   foodDetails = [

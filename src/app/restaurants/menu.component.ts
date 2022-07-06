@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderDetailsServiceService } from 'src/Services/restaurant-service';
+import { RestaurantService } from 'src/Services/restaurant-service';
 import { IRestaurantDetails } from '../restaurantDetails';
 
 @Component({
@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
  
   public restaurantDetails: IRestaurantDetails[] = [];
 
-  constructor(private service:OrderDetailsServiceService) { }
+  constructor(private service:RestaurantService) { }
 
   ngOnInit() {
     this.service.getRestaurantDetails()

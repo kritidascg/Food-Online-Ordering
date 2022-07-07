@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RestaurantService } from 'src/Services/restaurant-service';
+import { RestaurantService } from 'src/services/restaurant-service';
 import { CustomValidators } from '../custom-validators';
 import { HttpClient } from '@angular/common/http';
 
@@ -27,9 +27,17 @@ export class SignupComponent implements OnInit {
 
 onRegister(data: any)
 {
-  this.http.post('https://foodbukka.herokuapp.com/api/v1/auth/register', data);
-  this.router.navigate(['login']);
   console.log(this.registrationForm.value);
+  this.service.registerUser(this.registrationForm.value)
+  .subscribe(result=>
+  {
+    if(result!=null)
+    {
+      this.router.navigate(['login']);
+    }
+  })
+  
+
 }
 
 }

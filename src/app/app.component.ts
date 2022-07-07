@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {RestaurantService} from '../Services/restaurant-service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +7,8 @@ import {RestaurantService} from '../Services/restaurant-service';
 })
 export class AppComponent {
   title = 'Food-Online-Ordering';
+
+  ngOnInIt()
+  {
+  }
 }

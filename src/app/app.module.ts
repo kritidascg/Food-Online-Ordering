@@ -18,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 
 import{ReactiveFormsModule} from '@angular/forms';
+import { AuthService } from 'src/security/auth.service';
+import { AuthGuard } from 'src/security/auth.guard';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     MatIconModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

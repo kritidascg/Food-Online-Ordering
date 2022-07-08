@@ -33,16 +33,16 @@
 </div>
 
 <!-- foodbox  -->
-<!-- <div class="container mt-4 mb-4">
-    <h1 class="text-center">Customer's <span class="highlight">Choice</span></h1>
+<div class="container mt-4 mb-4">
+    <h1 class="text-center">Top <span class="highlight">Restaurants</span></h1>
     <div class="row">
-        <div class="col-lg-3 mt-3" *ngFor="let fd of foodData;index as i">
-            <div class="foodbox" *ngIf= "i<=3">
-                <img src="{{fd.foodImg}}" />
-                <h1>{{fd.foodName}}</h1>
-                <p>{{fd.foodPrice | currency:'INR'}}</p>
-            </div>
-        </div>
+        <div class="col-lg-4" *ngFor="let rd of restaurantList">
+            <div class="foodbox mt-3 mb-3">
+                <img src="{{rd.image}}">
+                <h1>{{rd.businessname}}</h1>
+                <p id="location">Location - {{rd.location}}</p>
     </div>
-    <a routerLink="menu" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
-</div> -->
+    <a routerLink="restaurants" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
+</div>
+    </div>
+</div>

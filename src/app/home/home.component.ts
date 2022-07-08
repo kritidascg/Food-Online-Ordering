@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from 'src/services/restaurant-service';
+import { take } from 'rxjs';
+import { IRestaurantDetails } from 'src/models/restaurantDetails';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,13 @@ import { RestaurantService } from 'src/services/restaurant-service';
 export class HomeComponent implements OnInit {
 
   constructor(private service:RestaurantService) { }
-  foodData:any;
+  restaurantList: any;
   ngOnInit(): void {
+    this.service.receiveRestaurantList()
+    .pipe(take(5))
+    .subscribe((data)=> {
+    this.restaurantList=data;
+    });
+    console.log(this.restaurantList);
   }
 }

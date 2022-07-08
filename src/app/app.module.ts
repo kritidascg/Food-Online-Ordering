@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './restaurants/menu.component';
+import { RestaurantComponent } from './restaurants/restaurants.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -20,6 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
 import{ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from 'src/security/auth.service';
 import { AuthGuard } from 'src/security/auth.guard';
+import { FoodMenuComponent } from './food-menu/food-menu.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { AuthGuard } from 'src/security/auth.guard';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    MenuComponent,
+    RestaurantComponent,
     AboutComponent,
     LoginComponent,
     SignupComponent,
     ContactComponent,
+    FoodMenuComponent,
 
   ],
   imports: [

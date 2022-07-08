@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="col-lg-4">
+
+        <div class="foodbox mt-3 mb-3">
+            <img src="{{MenuDetails.images[1]}}">
+            <h1>{{MenuDetails.menuname}}</h1>
+            <p>Description - {{MenuDetails.description}}</p>
+            <button class="btn btn-success" *ngIf= "!addButton" (click)="addButton=true">Add To Cart</button>
+            <div class="d-flex w-50" *ngIf="addButton">
+                <input type="number" class="form-control">
+                <button class="btn btn-danger" (click)="add()">Add</button>
+
+            </div>
+</div>
+</div>
+
+</div>
+
+

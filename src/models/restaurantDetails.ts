@@ -7,4 +7,4 @@ export interface IRestaurantDetails
     averagecost: string,
     reviews: number,
     phone: string
-}
+}[];

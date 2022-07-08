@@ -4,10 +4,10 @@ import { IRestaurantDetails } from '../../models/restaurantDetails';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './restaurants.component.html',
+  styleUrls: ['./restaurants.component.css']
 })
-export class MenuComponent implements OnInit {
+export class RestaurantComponent implements OnInit {
  
   public restaurantDetails: IRestaurantDetails[] = [];
 
@@ -18,4 +18,8 @@ export class MenuComponent implements OnInit {
    .subscribe(data => this.restaurantDetails= data.Result);
   }
 
+  sendRestaurantDetails(restaurantDetails : IRestaurantDetails[])
+  {
+    this.service.sendRestaurantList(restaurantDetails);
+  }
 }

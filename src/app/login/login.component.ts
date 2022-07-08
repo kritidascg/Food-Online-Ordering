@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/security/auth.service';
 import { LoginService } from 'src/services/login.service';
@@ -15,10 +15,9 @@ export class LoginComponent implements OnInit {
 
   hide: boolean = false;
   loginForm: any;
-  route: any;
   responseData: any;
 
-  constructor(private authservice:AuthService, route: Router) {
+  constructor(private authservice:AuthService, private route: Router) {
   }
 
   ngOnInit() {
@@ -40,10 +39,10 @@ export class LoginComponent implements OnInit {
       {
         alert("Logged In Successfully");
         console.log(this.loginForm.value);
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
         this.authservice.onLogin(this.loginForm.value).subscribe(result=>{
           if(result!=null)
           {
+        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
             this.route.navigate(['']);
           }
           else{

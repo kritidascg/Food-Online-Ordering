@@ -15,7 +15,7 @@ export class AuthService {
      return this.http.post(this.loginUrl,userCred);
    }
    IsLoggedIn(){
-     return localStorage.getItem('username')!=null;
+     return localStorage.getItem('loginForm')!==null;
    }
  
 

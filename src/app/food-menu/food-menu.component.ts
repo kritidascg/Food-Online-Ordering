@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMenuDetails } from 'src/models/menuDetails';
+import { CartService } from 'src/services/cart-service.service';
 import { RestaurantService } from 'src/services/restaurant-service';
 
 @Component({
@@ -11,17 +11,17 @@ export class FoodMenuComponent implements OnInit {
   public MenuDetails: any;
   addButton:boolean=false;
 
-  constructor(private service: RestaurantService) { }
+  constructor(private service: RestaurantService, private cartService: CartService) { }
 
   ngOnInit() {
     this.service.getMenuDetails()
    .subscribe(data => this.MenuDetails= data.Result);
-  }
+ 
+}
 
-  add()
-  {
-
-  }
+add(item: any){
+  this.cartService.addtoCart(item);
+}
 
 
   }

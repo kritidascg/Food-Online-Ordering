@@ -21,6 +21,7 @@ import{ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from 'src/security/auth.service';
 import { AuthGuard } from 'src/security/auth.guard';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { CartComponent } from './cart-display/cart-display.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FoodMenuComponent } from './food-menu/food-menu.component';
     SignupComponent,
     ContactComponent,
     FoodMenuComponent,
+    CartComponent
 
   ],
   imports: [

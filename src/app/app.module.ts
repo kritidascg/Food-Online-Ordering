@@ -16,10 +16,11 @@ import{ MatCardModule } from '@angular/material/card';
 import {MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-
+import { FormsModule } from '@angular/forms';
 import{ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from 'src/security/auth.service';
 import { AuthGuard } from 'src/security/auth.guard';
+import { FilterPipe } from 'src/models/filter.pipe';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { CartComponent } from './cart-display/cart-display.component';
 
@@ -35,7 +36,8 @@ import { CartComponent } from './cart-display/cart-display.component';
     SignupComponent,
     ContactComponent,
     FoodMenuComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
 
   ],
   imports: [
@@ -47,7 +49,8 @@ import { CartComponent } from './cart-display/cart-display.component';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

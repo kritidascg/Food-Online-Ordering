@@ -1,6 +1,6 @@
 .container
 {
-    background-color: rgb(196, 196, 151);
+    background-color: rgb(24, 24, 13);
     width: 800%;
     margin-top: 2px;
 }
@@ -8,6 +8,8 @@
 .foodbox 
 {
     padding: 10px 20px 0px 20px;
+    color: #fff;
+    
 } 
 .foodbox img
 {
@@ -15,22 +17,22 @@
     height: 250px;
     object-fit: cover;
     border-radius: 5px;
+    margin-left: 320px;
 }
-.foodbox h1 
+.foodbox h1
 {
     font-size: 20px;
-    margin-top: 28px;
+    margin-top: 18px;
     font-weight: bold;
     color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#location, #cost, #reviews, #phone{
-    color: green;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 2px;
+.btn-success,.btn-danger
+{
+    margin-bottom: 10px;
 }
+
 .buybtn
 {
 

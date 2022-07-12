@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/services/cart-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public searchTerm!: string;
+  public totalItem: number =0;
+
+  constructor(private cartservice: CartService) { }
 
   ngOnInit(): void {
+    this.cartservice.getProducts()
+    .subscribe(res=>{
+      this.totalItem=res.length;
+    }
+      )
   }
-
+  
+  search(event:any)
+  {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartservice.search.next(this.searchTerm);
+  }
 }

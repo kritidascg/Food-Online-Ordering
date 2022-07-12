@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/services/cart-service.service';
 import { RestaurantService } from 'src/services/restaurant-service';
 
@@ -10,11 +11,13 @@ import { RestaurantService } from 'src/services/restaurant-service';
 export class FoodMenuComponent implements OnInit {
   public MenuDetails: any;
   addButton:boolean=false;
+  menuId: any;
 
-  constructor(private service: RestaurantService, private cartService: CartService) { }
+  constructor(private service: RestaurantService, private cartService: CartService, private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.service.getMenuDetails()
+    this.menuId=this.actRoute.snapshot.paramMap.get('id');
+    this.service.getMenuDetails(this.menuId)
    .subscribe(data => this.MenuDetails= data.Result);
  
 }

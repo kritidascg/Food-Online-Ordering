@@ -10,7 +10,7 @@ export class RestaurantService {
 
   private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
   private signUpUrl: string = "https://foodbukka.herokuapp.com/api/v1/auth/register";
-  private menuUrl: string = "https://foodbukka.herokuapp.com/api/v1/menu/5f5eccf4e923d0aca3e7d449";
+  private menuUrl: string = "https://foodbukka.herokuapp.com/api/v1/menu/";
 
   private Subject= new BehaviorSubject<any>("restaurantList.value");
 
@@ -21,9 +21,9 @@ export class RestaurantService {
     return this.http.get(this.url);
   }
 
-  getMenuDetails(): Observable<any>
+  getMenuDetails(menuId:string): Observable<any>
   {
-    return this.http.get(this.menuUrl);
+    return this.http.get(this.menuUrl + "/" + menuId);
   }
 
   registerUser(data : any): Observable<any>

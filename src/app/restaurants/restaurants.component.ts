@@ -20,11 +20,13 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit() {
     this.service.getRestaurantDetails()
-   .subscribe(data => this.restaurantDetails= data.Result);
+   .subscribe(data => {this.restaurantDetails= data});
+   
 
    this.cartservice.search.subscribe((val:any)=>{
     this.searchKey = val;
-  })
+  });
+
   }
 
   filter(category:string){

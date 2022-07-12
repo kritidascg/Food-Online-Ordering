@@ -1,8 +1,15 @@
+<app-navbar></app-navbar>
+
+<body>
 <div class="container">
     <div class="col-lg-4">
 
         <div class="foodbox mt-3 mb-3">
-            <img src="{{MenuDetails.images[1]}}">
+            <span *ngFor= "let image of MenuDetails.images">
+                <span class="flex-container">
+            <img src="{{image}}">
+                </span>
+            </span>
             <h1>{{MenuDetails.menuname}}</h1>
             <p>Description - {{MenuDetails.description}}</p>
             <button class="btn btn-success" *ngIf= "!addButton" (click)="addButton=true">Add To Cart</button>
@@ -15,3 +22,4 @@
 </div>
 
 </div>
+</body>

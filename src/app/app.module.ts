@@ -21,8 +21,11 @@ import{ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from 'src/security/auth.service';
 import { AuthGuard } from 'src/security/auth.guard';
 import { FilterPipe } from 'src/models/filter.pipe';
+import { ToastrService } from 'ngx-toastr';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
-import { CartComponent } from './cart-display/cart-display.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderItemsListComponent } from './order-items-list/order-items-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { CartComponent } from './cart-display/cart-display.component';
     ContactComponent,
     FoodMenuComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
+    CheckoutComponent,
+    OrderItemsListComponent
 
   ],
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CartService } from 'src/services/cart-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/services/cart.service';
 import { RestaurantService } from 'src/services/restaurant-service';
 
 @Component({
@@ -13,7 +13,7 @@ export class FoodMenuComponent implements OnInit {
   addButton:boolean=false;
   menuId: any;
 
-  constructor(private service: RestaurantService, private cartService: CartService, private actRoute: ActivatedRoute) { }
+  constructor(private service: RestaurantService, private router: Router, private cartService: CartService, private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.menuId=this.actRoute.snapshot.paramMap.get('id');
@@ -24,6 +24,7 @@ export class FoodMenuComponent implements OnInit {
 
 add(item: any){
   this.cartService.addtoCart(item);
+  this.router.navigate(['cart']);
 }
 
 

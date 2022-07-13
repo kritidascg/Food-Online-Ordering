@@ -2,5 +2,7 @@ import { CartItem } from "./cart-item";
 
 export class Cart{
   items:CartItem[] = [];
-  totalCount:number = 0;
+  totalPrice:number = 100;
+  username: any;
+  address:any;
 }

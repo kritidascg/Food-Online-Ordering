@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/services/cart-service.service';
 import { RestaurantService } from 'src/services/restaurant-service';
 import { IRestaurantDetails } from '../../models/restaurantDetails';
 
@@ -16,27 +15,18 @@ export class RestaurantComponent implements OnInit {
   searchKey:string ="";
   public restaurantDetails: any;
 
-  constructor(private service:RestaurantService, private cartservice: CartService, private router: Router) { }
+
+  constructor(private service:RestaurantService, private router: Router) { }
 
   ngOnInit() {
     this.service.getRestaurantDetails()
    .subscribe(data => {this.restaurantDetails= data});
    
-
-   this.cartservice.search.subscribe((val:any)=>{
-    this.searchKey = val;
-  });
+  
 
   }
 
-  filter(category:string){
-    this.filterCategory = this.restaurantDetails
-    .filter((a:any)=>{
-      if(a.category == category || category==''){
-        return a;
-      }
-    })
-  }
+  
 
   displaymenuitem(i:number) {
     this.restId=this.restaurantDetails.Result[i].menu;
@@ -45,6 +35,7 @@ export class RestaurantComponent implements OnInit {
   
   }
 
+  
   sendRestaurantDetails(restaurantDetails : IRestaurantDetails[])
   {
     this.service.sendRestaurantList(restaurantDetails);

@@ -17,15 +17,15 @@ import {MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import{ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from 'src/security/auth.service';
 import { AuthGuard } from 'src/security/auth.guard';
 import { FilterPipe } from 'src/models/filter.pipe';
-import { ToastrService } from 'ngx-toastr';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { OrderItemsListComponent } from './order-items-list/order-items-list.component';
+import { CheckoutCartComponent } from './checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -41,10 +41,8 @@ import { OrderItemsListComponent } from './order-items-list/order-items-list.com
     FoodMenuComponent,
     CartComponent,
     FilterPipe,
-    CheckoutComponent,
-    OrderItemsListComponent
-
-  ],
+    CheckoutCartComponent,
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -55,7 +53,7 @@ import { OrderItemsListComponent } from './order-items-list/order-items-list.com
     MatInputModule,
     MatIconModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

@@ -31,7 +31,12 @@ export class CartComponent implements OnInit {
 
   shopMore()
   {
-    this.route.navigate(['menu',this.menuId])
+    this.route.navigate(['restaurants']);
+  }
+
+  checkout()
+  {
+    this.route.navigate(['checkout']);
   }
 
 }

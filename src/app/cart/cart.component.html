@@ -10,6 +10,7 @@
                             <th>Food Image</th>
                             <th>Food Name</th>
                             <th>Description</th>  
+                            <th>Price</th>
                             <th>Quantity</th>  
                             </tr>
                     </thead>
@@ -19,19 +20,28 @@
                             <td><img style="width: 70px; height: 90px;" src="{{item.images[1]}}" alt=""></td>
                             <td style="width: 25%;">{{item.menuname}}</td>
                             <td style="width: 12%;">{{item.description}}</td>
+                            <td style><h2>INR {{service.price}}</h2></td>
+
                             <td> <button class="btn btn-link px-2"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                (click)="stepUp(this.service.price)">
                                 <i class="fa fa-plus"></i>
-                              </button>
-                
-                              <input id="form1" min="0" name="quantity" value="1" type="number"
-                                class="form-control form-control-sm" />
-                
-                              <button class="btn btn-link px-2"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                <i class="fa fa-minus"></i>
-                              </button></td>
-                           </tr>
+                            </button>
+                            <p id="quantity">{{productQuantity}}</p>
+                            <button class="btn btn-link px-2"
+                            (click)="stepDown(this.service.price)">
+                            <i class="fa fa-minus"></i>
+                        </button></td>
+                        </tr>
+                        
+                        <tr >
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>TotalPrice:{{totalCartPrice}}</td>
+                          <td></td>
+                        </tr>                        
+       
                         <tr>
                             <td colspan="4"></td>
                             <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
@@ -58,7 +68,7 @@
             <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
             <h4>Your cart is empty!</h4>
             <h6>Add items to it now</h6>
-            <button class="btn btn-primary">SHOP NOW</button>
+            <button (click)="shopMore()" class="btn btn-primary">SHOP NOW</button>
         </div>
     </div>
  

@@ -24,3 +24,12 @@
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+#quantity{
+    border: 1px;
+} 
+
+.fa
+{
+    color: blue;
+}

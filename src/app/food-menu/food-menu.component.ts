@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
+//import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { RestaurantService } from 'src/services/restaurant-service';
 
 @Component({
@@ -12,20 +13,26 @@ export class FoodMenuComponent implements OnInit {
   public MenuDetails: any;
   addButton:boolean=false;
   menuId: any;
+  price!: number;
 
-  constructor(private service: RestaurantService, private router: Router, private cartService: CartService, private actRoute: ActivatedRoute) { }
+  constructor(public service: RestaurantService, private router: Router, private cartService: CartService, private actRoute: ActivatedRoute)
+   {
+    
+    }
 
   ngOnInit() {
     this.menuId=this.actRoute.snapshot.paramMap.get('id');
     this.service.getMenuDetails(this.menuId)
    .subscribe(data => this.MenuDetails= data.Result);
  
+   this.price=this.service.getPrice();
 }
 
-add(item: any){
+add(item: any, price:number){
   this.cartService.addtoCart(item);
-  this.router.navigate(['cart']);
+  this.router.navigate(['cart',this.price]);
 }
+
 
 
   }

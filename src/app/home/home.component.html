@@ -2,7 +2,7 @@
 <div class="banner">
     <div class="content">
         <h1 class="mb-5">Fresh Cooked Food <br/> <br/> At Your Door.</h1>
-        <a routerLink="menu">ORDER NOW <i class="bi bi-arrow-right"></i></a>
+        <a routerLink="/restaurants">ORDER NOW <i class="bi bi-arrow-right"></i></a>
     </div>
 </div>
 <!-- step  -->
@@ -20,32 +20,18 @@
         <div class="col-lg-4 mt-2">
             <div class="stepBox">
                 <h1>2</h1>
-                <p>Fill in your Details</p>
+                <p>Order your favourite food</p>
             </div>
         </div>
         <!-- three  -->
         <div class="col-lg-4 mt-2">
             <div class="stepBox">
                 <h1>3</h1>
-                <p>Your Order is delivered in minutes</p>
+                <p>Your Order is delivered in minutes!</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- foodbox  -->
-<div class="container mt-4 mb-4">
-    <h1 class="text-center">Top <span class="highlight">Restaurants</span></h1>
-    <div class="row">
-        <div class="col-lg-4" *ngFor="let rd of restaurantList">
-            <div class="foodbox mt-3 mb-3">
-                <img src="{{rd.image}}">
-                <h1>{{rd.businessname}}</h1>
-                <p id="location">Location - {{rd.location}}</p>
-    </div>
-    <a routerLink="restaurants" class="viewmorebtn">view more <i class="bi bi-arrow-right"></i></a>
-</div>
-    </div>
-</div>
 
 <app-footer></app-footer>

@@ -9,32 +9,39 @@
 
         <div class="foodbox mt-3 mb-3">
 
-            <div id="myCarousel" class="carousel" data-ride="carousel">
-                     <button class="carousel-button prev">&#8656;</button>
-                     <button class="carousel-button next">&#8658;</button>
-                     <ul>
-                        <li class="slide">
+            <!-- <ngb-carousel *ngIf= "images">
+                <ng-template ngbSlide>
+                  <div class="picsum-img-wrapper">
                     <img [src]="MenuDetails.images[0]" alt="Random second slide">
-                </li>
-                <li class="slide">                    
-                    <img [src]="MenuDetails.images[1]" alt="Random third slide">
-                    </li>
-                    <li class="slide">            
-                    <img [src]="MenuDetails.images[2]" alt="Random first slide">
-                    </li>
-                </ul>
-                </div>
+                  </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                    
+                     <img [src]="MenuDetails.images[1]" alt="Random third slide">
+                    </div>
+                  </ng-template>
+                  <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                    
+                      <img [src]="MenuDetails.images[2]" alt="Random first slide">
+                    </div>
+                  </ng-template>
+            </ngb-carousel> -->
             
             <h1>{{MenuDetails.menuname}}</h1>
+            <p>Price:{{this.service.price}}</p>
             <p>Description - {{MenuDetails.description}}</p>
-            <button class="btn btn-success" *ngIf= "!addButton" (click)="addButton=true">Add To Cart</button>
+            <button class="btn btn-success" *ngIf= "!addButton" (click)="add(MenuDetails,price)">Add To Cart</button> 
             <div class="d-flex w-50" *ngIf="addButton">
-                <input type="number" class="form-control">
-                <button class="btn btn-danger" (click)="add(MenuDetails)">Add</button>
+                <br><br>
             </div>
+
+                
 </div>
+    </div>
 </div>
 
-</div>
+
 </body>
 

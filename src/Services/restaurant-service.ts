@@ -7,13 +7,14 @@ import { IRestaurantDetails } from 'src/models/restaurantDetails';
   providedIn: 'root'
 })
 export class RestaurantService {
-
+  public search = new BehaviorSubject<string>("");
+  public price:number= Math.random();
+  
   private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
   private signUpUrl: string = "https://foodbukka.herokuapp.com/api/v1/auth/register";
   private menuUrl: string = "https://foodbukka.herokuapp.com/api/v1/menu/";
 
-  private Subject= new BehaviorSubject<any>("restaurantList.value");
-
+  
   constructor(private http:HttpClient) { }
 
   getRestaurantDetails(): Observable<any>
@@ -30,18 +31,8 @@ export class RestaurantService {
   {
     return this.http.post(this.signUpUrl, data);
   }
- 
-  sendRestaurantList(restaurantDetails : IRestaurantDetails[])
-  {
-    this.Subject.next(restaurantDetails);
+  getPrice() {
+    return Math.floor(this.price * (200) + 100);
   }
-
-  receiveRestaurantList(): Observable<any>
-  {
-    return this.Subject.asObservable();
-  }
-  
-
-
 
 }

@@ -13,11 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(private service:RestaurantService) { }
   restaurantList: any;
   ngOnInit(): void {
-    this.service.receiveRestaurantList()
-    .pipe(take(5))
-    .subscribe((data)=> {
-    this.restaurantList=data;
-    });
-    console.log(this.restaurantList);
+    
   }
 }

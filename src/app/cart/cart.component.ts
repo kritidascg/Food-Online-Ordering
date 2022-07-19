@@ -1,21 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { RestaurantService } from 'src/services/restaurant-service';
+import { FoodMenuComponent } from '../food-menu/food-menu.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit,AfterViewInit {
+
+  @ViewChild(FoodMenuComponent)menu !: FoodMenuComponent; 
   public products : any = [];
   totalCartPrice:number=0;
   productQuantity:number=1;
   menuId: any;
-  
+  price: number=Math.round(Math.random()*(200)+100);;
 
   constructor(private cartService : CartService, public service:RestaurantService, private actRoute: ActivatedRoute, private route: Router) { }
+
+  ngAfterViewInit(): void {
+      this.menu.price;
+  }
 
   ngOnInit() {
     this.cartService.getProducts()

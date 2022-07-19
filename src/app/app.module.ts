@@ -54,7 +54,7 @@ import { CheckoutCartComponent } from './checkout/checkout.component';
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-  ],
+      ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })

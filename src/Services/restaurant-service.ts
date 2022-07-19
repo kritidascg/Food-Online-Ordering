@@ -8,7 +8,7 @@ import { IRestaurantDetails } from 'src/models/restaurantDetails';
 })
 export class RestaurantService {
   public search = new BehaviorSubject<string>("");
-  public price:number= Math.random();
+  public price:number= Math.random() * (200) + 100;
   
   private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
   private signUpUrl: string = "https://foodbukka.herokuapp.com/api/v1/auth/register";
@@ -32,7 +32,7 @@ export class RestaurantService {
     return this.http.post(this.signUpUrl, data);
   }
   getPrice() {
-    return Math.floor(this.price * (200) + 100);
+    return Math.round(Math.floor(this.price));
   }
 
 }

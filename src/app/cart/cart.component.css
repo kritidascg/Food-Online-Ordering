@@ -29,7 +29,12 @@
     border: 1px;
 } 
 
-.fa
-{
-    color: blue;
+i{
+    color: black;
+}
+.btn{
+    border:1px;
+}
+.btn btn-danger{
+    padding-right: 5px;
 }

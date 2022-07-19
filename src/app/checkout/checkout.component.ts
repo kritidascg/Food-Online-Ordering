@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckoutCartComponent implements OnInit {
   checkOutForm: any;
-
+  deliveredDate: Date= new Date();
   constructor(private route:Router) { }
 
   ngOnInit(): void {
@@ -27,6 +27,6 @@ export class CheckoutCartComponent implements OnInit {
       'state': new FormControl('', Validators.required)}); 
   }
   orderPlaced(){
-    alert("Your order is placed!");
+    alert("Your order is placed! It will be delivered to you in" + " " + this.deliveredDate);
   }
 }

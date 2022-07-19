@@ -8,8 +8,7 @@
                         <tr>
                             <th>Sr.No</th>
                             <th>Food Image</th>
-                            <th>Food Name</th>
-                            <th>Description</th>  
+                            <th>Food Name</th> 
                             <th>Price</th>
                             <th>Quantity</th>  
                             </tr>
@@ -17,17 +16,16 @@
                     <tbody>
                         <tr *ngFor= "let item of products; let i = index">
                             <td>{{i+1}}</td>
-                            <td><img style="width: 70px; height: 90px;" src="{{item.images[1]}}" alt=""></td>
+                            <td><img style="width: 70px; height: 90px;" src="{{item.images[2]}}" alt=""></td>
                             <td style="width: 25%;">{{item.menuname}}</td>
-                            <td style="width: 12%;">{{item.description}}</td>
-                            <td style><h2>INR {{service.price}}</h2></td>
+                            <td style><h2>Rs.{{price}}</h2></td>
 
-                            <td> <button class="btn btn-link px-2"
+                            <td> <button class="btn btn-link px-5"
                                 (click)="stepUp(this.service.price)">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <p id="quantity">{{productQuantity}}</p>
-                            <button class="btn btn-link px-2"
+                            <span>{{productQuantity}}</span> 
+                            <button class="btn btn-link px-5"
                             (click)="stepDown(this.service.price)">
                             <i class="fa fa-minus"></i>
                         </button></td>
@@ -38,7 +36,7 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td>TotalPrice:{{totalCartPrice}}</td>
+                          <td>Total Amount: {{totalCartPrice}}</td>
                           <td></td>
                         </tr>                        
        

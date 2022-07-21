@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/security/auth.service';
 import { LoginService } from 'src/services/login.service';
@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
     {
       if(this.loginForm.valid)
       {
-        alert("Logged In Successfully");
         console.log(this.loginForm.value);
         this.authservice.onLogin(this.loginForm.value).subscribe(result=>{
           if(result!=null)
           {
         localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
+        alert("Logged In Successfully");
             this.route.navigate(['']);
           }
           else{

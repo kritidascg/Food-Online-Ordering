@@ -1,0 +1,53 @@
+[  
+
+    {  
+
+      "jsonUsername": "anon1@gmail.com",  
+
+      "jsonPassword": "password1"  
+
+    },  
+
+    {  
+
+        "jsonUsername": "anon2@gmail.com",  
+
+        "jsonPassword": "password2"  
+
+    },  
+
+    {  
+
+        "jsonUsername": "anon3@gmail.com",  
+
+        "jsonPassword": "password3"
+
+    },  
+
+    {  
+
+        "jsonUsername": "anon4@gmail.com",  
+
+        "jsonPassword": "password4"  
+
+    },  
+
+    {  
+
+        "jsonUsername": "anon5@gmail.com",  
+
+        "jsonPassword": "password5"  
+
+    },
+
+    {
+
+       
+
+        "jsonUsername": "admin",  
+
+        "jsonPassword": "admin"  
+
+    }
+
+  ]

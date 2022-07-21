@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "https://foodbukka.herokuapp.com/api/v1",
+        "secure": false
+        }
+        }

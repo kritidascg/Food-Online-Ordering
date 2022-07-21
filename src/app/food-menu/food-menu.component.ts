@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { CartService } from 'src/services/cart.service';
 import { RestaurantService } from 'src/services/restaurant-service';
 
@@ -20,7 +21,7 @@ export class FoodMenuComponent implements OnInit {
 
   ngOnInit() {
     this.menuId=this.actRoute.snapshot.paramMap.get('id');
-    this.service.getMenuDetails(this.menuId)
+    this.service.getRestaurantDetails()
    .subscribe(data => this.MenuDetails= data.Result);
      
    

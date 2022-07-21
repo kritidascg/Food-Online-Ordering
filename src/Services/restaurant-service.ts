@@ -10,10 +10,8 @@ export class RestaurantService {
   public search = new BehaviorSubject<string>("");
   public price:number= Math.random() * (200) + 100;
   
-  private url: string= "https://foodbukka.herokuapp.com/api/v1/restaurant";
-  private signUpUrl: string = "https://foodbukka.herokuapp.com/api/v1/auth/register";
-  private menuUrl: string = "https://foodbukka.herokuapp.com/api/v1/menu/";
-
+  private url: string= "http://localhost:3000/restaurant";
+  
   
   constructor(private http:HttpClient) { }
 
@@ -22,15 +20,7 @@ export class RestaurantService {
     return this.http.get(this.url);
   }
 
-  getMenuDetails(menuId:string): Observable<any>
-  {
-    return this.http.get(this.menuUrl + "/" + menuId);
-  }
-
-  registerUser(data : any): Observable<any>
-  {
-    return this.http.post(this.signUpUrl, data);
-  }
+  
   getPrice() {
     return Math.round(Math.floor(this.price));
   }

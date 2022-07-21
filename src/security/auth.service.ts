@@ -7,16 +7,16 @@ import { User } from 'src/models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  loginUrl='https://foodbukka.herokuapp.com/api/v1/auth/login';
   constructor(private http:HttpClient) {
 
    }
    onLogin(userCred:any){
-     return this.http.post(this.loginUrl,userCred);
+    const {username,password}= userCred;
+     return this.http.post('http://localhost:3000/login',{username,password});
    }
    IsLoggedIn(){
      return localStorage.getItem('loginForm')!==null;
    }
  
-
+   
 }

@@ -1,0 +1,57 @@
+[{
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "businessname": "Hathaway Foods",
+    "location": "Shivaji Nagar, Pune",
+    "averagecost": 500,
+    "reviews": 4.5,
+    "phone": 9856735625,
+    "foodMenu": [
+        {
+            "menuId":1,
+            "images": "https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "menuName": "Momo",
+            "Description": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
+            "price": 250,
+            "quantity": 1
+        }
+    ]
+},
+
+{
+    "image": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "businessname": "Domino's Pizza",
+    "location": "Wakad, Pune",
+    "averagecost": 700,
+    "reviews": 4.2,
+    "phone": 9856735654,
+    "foodMenu": [
+        {
+            "menuId":2,
+            "images": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "menuName": "Pizza",
+            "Description": "Pizza (Italian: [ˈpittsa], Neapolitan: is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.",
+            "price": 250,
+            "quantity": 1
+        }
+    ]
+},
+{
+    "image": "https://images.unsplash.com/photo-1585518419759-7fe2e0fbf8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=724&q=80",
+    "businessname": "Organic Kitchen",
+    "location": "Koregaon Park, Pune",
+    "averagecost": 1000,
+    "reviews": 5.0,
+    "phone": 9356715625,
+    "foodMenu": [
+        {
+            "menuId":3,
+            "images": "https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "menuName": "Momo",
+            "Description": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
+            "price": 250,
+            "quantity": 1
+        }
+    ]
+}]
+
+

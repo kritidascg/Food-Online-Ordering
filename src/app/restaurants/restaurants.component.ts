@@ -29,7 +29,7 @@ export class RestaurantComponent implements OnInit {
   
 
   displaymenuitem(i:number) {
-    this.restId=this.restaurantDetails.Result[i].menu;
+    this.restId=this.restaurantDetails.foodMenu[i];
     console.log( this.restId);
     this.router.navigate(['menu',this.restId])
   

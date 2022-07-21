@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { RestaurantService } from 'src/services/restaurant-service';
 import { CustomValidators } from '../custom-validators';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -27,15 +27,15 @@ export class SignupComponent implements OnInit {
 
 onRegister(data: any)
 {
-  console.log(this.registrationForm.value);
-  this.service.registerUser(this.registrationForm.value)
-  .subscribe(result=>
-  {
-    if(result!=null)
-    {
-      this.router.navigate(['login']);
-    }
-  })
+  this.router.navigate(['login']);
+  // this.service.registerUser(this.registrationForm.value)
+  // .subscribe(result=>
+  // {
+  //   if(result!=null)
+  //   {
+  //     this.router.navigate(['login']);
+  //   }
+  // })
   
 
 }

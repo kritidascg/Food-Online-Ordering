@@ -5,16 +5,13 @@
     "averagecost": 500,
     "reviews": 4.5,
     "phone": 9856735625,
-    "foodMenu": [
-        {
-            "menuId":1,
-            "images": "https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-            "menuName": "Momo",
-            "Description": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
-            "price": 250,
-            "quantity": 1
-        }
-    ]
+    "menuId":1,
+    "foodImages": ["https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://images.unsplash.com/photo-1626776877921-f8d7b932bafc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=889&q=80","https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"],
+    "menuName": "Momo",
+    "foodDescription": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
+    "foodPrice": 150,
+    "quantity": 1
+        
 },
 
 {
@@ -24,16 +21,13 @@
     "averagecost": 700,
     "reviews": 4.2,
     "phone": 9856735654,
-    "foodMenu": [
-        {
-            "menuId":2,
-            "images": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-            "menuName": "Pizza",
-            "Description": "Pizza (Italian: [ˈpittsa], Neapolitan: is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.",
-            "price": 250,
-            "quantity": 1
-        }
-    ]
+    "menuId":2,
+    "foodImages": ["https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80","https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80"],
+    "menuName": "Pizza",
+    "foodDescription": "Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.",
+    "foodPrice": 450,
+    "quantity": 1
+
 },
 {
     "image": "https://images.unsplash.com/photo-1585518419759-7fe2e0fbf8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=724&q=80",
@@ -42,16 +36,12 @@
     "averagecost": 1000,
     "reviews": 5.0,
     "phone": 9356715625,
-    "foodMenu": [
-        {
-            "menuId":3,
-            "images": "https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-            "menuName": "Momo",
-            "Description": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
-            "price": 250,
-            "quantity": 1
-        }
-    ]
+    "menuId":3,
+    "foodImages": ["https://images.unsplash.com/photo-1505714197102-6ae95091ed70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://media.istockphoto.com/photos/caesar-salad-vegetable-salad-with-roast-chicken-meat-on-wooden-picture-id1264431895?s=612x612", "https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"],
+    "menuName": "Chicken Salad",
+    "foodDescription": "Chicken salad is any salad with chicken as a main ingredient. Other common ingredients may include mayonnaise, hard-boiled egg, celery, onion, pepper, pickles (or pickle relish) and a variety of mustards.",
+    "foodPrice": 550,
+    "quantity": 1
 }]
 
 

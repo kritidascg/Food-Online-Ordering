@@ -25,20 +25,20 @@
             </ngb-carousel> -->
             <div class="firstitem">
               <a>
-            <img class="first" src="{{MenuDetails.images[0]}}">
+            <img class="first" src="{{MenuDetails.foodImages[0]}}">
           </a>
           <a>
-            <img class="second" src="{{MenuDetails.images[1]}}">
+            <img class="second" src="{{MenuDetails.foodImages[1]}}">
           </a>
           <a>
-            <img class="third" src="{{MenuDetails.images[2]}}">
+            <img class="third" src="{{MenuDetails.foodImages[2]}}">
           </a>
         </div>
                   
-            <h1>{{MenuDetails.menuname}}</h1>
-            <p>Price : Rs. {{price}}</p>
-            <p>Description - {{MenuDetails.description}}</p>
-            <button class="btn btn-success" *ngIf= "!addButton" (click)="add(MenuDetails,price)">Add To Cart</button> 
+            <h1>{{MenuDetails.menuName}}</h1>
+            <p>Price : Rs. {{MenuDetails.foodPrice}}</p>
+            <p>Description - {{MenuDetails.foodDescription}}</p>
+            <button class="btn btn-success" *ngIf= "!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice)">Add To Cart</button> 
             <div class="d-flex w-50" *ngIf="addButton">
                 <br><br>
             </div>

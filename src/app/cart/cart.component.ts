@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { RestaurantService } from 'src/services/restaurant-service';
@@ -9,28 +9,23 @@ import { FoodMenuComponent } from '../food-menu/food-menu.component';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit,AfterViewInit {
-
-  @ViewChild(FoodMenuComponent)menu !: FoodMenuComponent; 
+export class CartComponent implements OnInit {
+ 
   public products : any = [];
   totalCartPrice:number=0;
   productQuantity:number=1;
-  menuId: any;
-  price: number=Math.round(Math.random()*(200)+100);;
+ 
 
-  constructor(private cartService : CartService, public service:RestaurantService, private actRoute: ActivatedRoute, private route: Router) { }
+  constructor(private cartService : CartService, public service:RestaurantService, private actRoute: ActivatedRoute, private router: Router) { }
 
-  ngAfterViewInit(): void {
-      this.menu.price;
-  }
-
+  
   ngOnInit() {
     this.cartService.getProducts()
     .subscribe(res=>{
       this.products = res;
        });
      
-     this.totalCartPrice=this.service.price;
+     this.totalCartPrice=this.products.foodPrice;
      console.log( this.totalCartPrice);
 
   }
@@ -44,26 +39,26 @@ export class CartComponent implements OnInit,AfterViewInit {
 
   shopMore()
   {
-    this.route.navigate(['restaurants']);
+    this.router.navigate(['restaurants']);
   }
 
   checkout()
   {
-    this.route.navigate(['checkout']);
+    this.router.navigate(['checkout']);
   }
 
   stepUp(price:number){
-    this.productQuantity ++;
-    this.totalCartPrice= this.totalCartPrice+ this.service.price;
+    this.products.quantity ++;
+    this.totalCartPrice= this.totalCartPrice+ this.products.foodPrice;
     console.log(this.totalCartPrice);
 
  }
  stepDown(price:number){
-   if (this.productQuantity !== 0 && this.service.price !== 0)
-   this.productQuantity --;
-   this.totalCartPrice= this.totalCartPrice-this.service.price;
+   if (this.products.quantity !== 0 && this.products.foodPrice !== 0)
+   this.products.quantity --;
+   this.totalCartPrice= this.totalCartPrice-this.products.foodPrice;
 
-     if(this.productQuantity===0){
+     if(this.products.quantity===0){
        alert("Select quantity")
        this.totalCartPrice=0;
      }

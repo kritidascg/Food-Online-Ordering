@@ -22,14 +22,15 @@ export class FoodMenuComponent implements OnInit {
   ngOnInit() {
     this.menuId=this.actRoute.snapshot.paramMap.get('id');
     this.service.getRestaurantDetails()
-   .subscribe(data => this.MenuDetails= data.Result);
-     
+   .subscribe(data => {this.MenuDetails= data[this.menuId]
+    console.log(this.MenuDetails);  });
+   
    
 }
 
 add(item: any, price:number){
   this.cartService.addtoCart(item);
-  this.router.navigate(['cart',this.price]);
+  this.router.navigate(['cart',this.MenuDetails.foodPrice]);
 }
 
 

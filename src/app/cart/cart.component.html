@@ -16,17 +16,17 @@
                     <tbody>
                         <tr *ngFor= "let item of products; let i = index">
                             <td>{{i+1}}</td>
-                            <td><img style="width: 70px; height: 90px;" src="{{item.images[2]}}" alt=""></td>
-                            <td style="width: 25%;">{{item.menuname}}</td>
-                            <td style><h2>Rs.{{price}}</h2></td>
+                            <td><img style="width: 70px; height: 90px;" src="{{item.foodImages[1]}}" alt=""></td>
+                            <td style="width: 25%;">{{item.menuName}}</td>
+                            <td style><h2>Rs.{{item.foodPrice}}</h2></td>
 
                             <td> <button class="btn btn-link px-5"
-                                (click)="stepUp(this.service.price)">
+                                (click)="stepUp(item.foodPrice)">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <span>{{productQuantity}}</span> 
+                            <span>{{item.quantity}}</span> 
                             <button class="btn btn-link px-5"
-                            (click)="stepDown(this.service.price)">
+                            (click)="stepDown(item.foodPrice)">
                             <i class="fa fa-minus"></i>
                         </button></td>
                         </tr>

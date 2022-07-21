@@ -23,7 +23,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#location, #cost, #reviews, #phone{
+#location, #cost, #reviews, #phone, #id{
     color: rgb(146, 236, 146);
     font-weight: bold;
     font-style: italic;

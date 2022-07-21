@@ -14,26 +14,27 @@ export class RestaurantComponent implements OnInit {
   searchKey:string ="";
   public restaurantDetails: any;
   price!: number;
-
-
+  i: any;
+  
   constructor(private service:RestaurantService, private router: Router) { }
 
   ngOnInit() {
     this.service.getRestaurantDetails()
    .subscribe(data => {this.restaurantDetails= data});
-   
+   }
   
+  orderNow(i:number)
+  {
+    console.log(i);
+    this.router.navigate(['menu', i]);
 
   }
 
-  
 
-  displaymenuitem(i:number) {
-    this.restId=this.restaurantDetails.foodMenu[i];
-    console.log( this.restId);
-    this.router.navigate(['menu',this.restId])
+  // displaymenuitem(i:number) {
+  //       this.router.navigate(['menu',this.menuId])
   
-  }
+  // }
 }
   
   

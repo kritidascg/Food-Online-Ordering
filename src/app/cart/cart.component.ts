@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
 import { RestaurantService } from 'src/services/restaurant-service';
-import { FoodMenuComponent } from '../food-menu/food-menu.component';
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +9,10 @@ import { FoodMenuComponent } from '../food-menu/food-menu.component';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
- 
+  foodPrice: any;
   public products : any = [];
   totalCartPrice:number=0;
-  productQuantity:number=1;
+  productQuantity:any=[];
  
 
   constructor(private cartService : CartService, public service:RestaurantService, private actRoute: ActivatedRoute, private router: Router) { }
@@ -25,10 +24,13 @@ export class CartComponent implements OnInit {
       this.products = res;
        });
      
-     this.totalCartPrice=this.products.foodPrice;
-     console.log( this.totalCartPrice);
+       this.foodPrice = this.actRoute.snapshot.paramMap.get('price');
+       for (let i = 0; i <= this.products.length; i++) {
+         this.productQuantity[i] = 1;
 
   }
+  this.totalCartPrice = this.foodPrice;
+}
   removeItem(item: any){
     this.cartService.removeCartItem(item);
   }
@@ -47,27 +49,19 @@ export class CartComponent implements OnInit {
     this.router.navigate(['checkout']);
   }
 
-  stepUp(price:number){
-    this.productQuantity ++;
-    this.totalCartPrice= this.totalCartPrice+ this.products.foodPrice;
-    console.log(this.totalCartPrice);
-
+  stepUp(price: number, i: number) {
+    this.productQuantity[i]++;
+    this.totalCartPrice = this.totalCartPrice + price;
  }
- stepDown(price:number){
-   if (this.productQuantity !== 0 && this.products.foodPrice !== 0)
-   this.productQuantity --;
-   this.totalCartPrice= this.totalCartPrice-this.products.foodPrice;
+ stepDown(price: number, i: number) {
+  if (this.productQuantity !== 0 && this.foodPrice !== 0)
+    this.productQuantity[i]--;
+  this.totalCartPrice = this.totalCartPrice - price;
 
-     if(this.productQuantity===0){
-       alert("Select quantity")
-       this.totalCartPrice=0;
-     }
-     console.log(this.totalCartPrice);
-
-
-
-
-
-   }
+  if (this.productQuantity === 0) {
+    alert("Select quantity")
+    this.totalCartPrice == 0;
+  }
+}
  }
 

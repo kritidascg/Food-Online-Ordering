@@ -36,13 +36,30 @@
   margin-left: 710px;
 }
 
-.foodbox h1
+.firstfood
 {
-    font-size: 20px;
-    margin-top: 1px;
-    font-weight: bold;
-    color: #fff;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 50px;
+}
+
+.secondfood
+{
+  margin-left: 380px;
+  margin-top: -170px;
+  width: 80%;
+  height: 250px;
+}
+
+.thirdfood
+{ 
+  margin-left: 710px;
+  margin-top: -250px;
+  width: 80%;
+
+}
+
+.first-description,.second-description,.third-description
+{
+  font-style: italic;
 }
 
 .btn-success,.btn-danger

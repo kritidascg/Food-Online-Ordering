@@ -1,26 +1,34 @@
 form{
-    width: 600px;
+    width: 500px;
     height: 470px;
-    background-color: #fff;
+    border-style: double;
+    background-color: black;
+    border: none;
     margin-bottom: 80px;
-    margin: -18px 280px 0px;
+    margin: -18px 320px 0px;
     align-content: center;
     justify-content: center;
 }
 
 .box {
-    position: relative;
-    top: 10px;
-    opacity: 3;
-    float: center;
-    padding: 60px 50px 40px 50px;
-    width: 100%;
-    background:rgba(19, 202, 56, 0.8);
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    z-index: 5;
-  }
+  position: relative;
+  top: 3px;
+  opacity: 1;
+  float: left;
+  padding: 60px 50px 40px 50px;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  border-radius: 1px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  z-index: 5;
+}
+
+.row
+{
+  height: fit-content;
+}
 
   p{
     text-align: center;
@@ -58,7 +66,7 @@ form{
   }
   label
   {
-    color: rgb(162, 21, 21);
+    color:white;
     font-weight: bold;
     font-size: medium;
     font-weight: 300;
@@ -67,22 +75,22 @@ form{
 
   .fs-3
   {
-    color: rgb(162, 21, 21);
+    color:  rgba(16, 202, 28, 0.703);
   }
 
   .g-0
   {
-    background-color: rgb(162, 21, 21);
+    background-color:  rgba(16, 202, 28, 0.703);
   }
 
   .help{
-    color: rgb(162, 21, 21);
+    color: wheat;
   }
   
  .btn-primary
  {
-    background-color: rgb(162, 21, 21);
-    margin: 5px 0px 0px 38px;
+    background-color: rgba(16, 202, 28, 0.703);
+    margin: 5px 0px 0px 20px;
     height: 38px;
     width: 200px;
  }

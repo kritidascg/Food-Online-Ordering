@@ -8,7 +8,7 @@ import { IRestaurantDetails } from 'src/models/restaurantDetails';
 })
 export class RestaurantService {
   public search = new BehaviorSubject<string>("");
-  public price:number= Math.random() * (200) + 100;
+  
   
   private url: string= "http://localhost:3000/restaurant";
   
@@ -21,8 +21,6 @@ export class RestaurantService {
   }
 
   
-  getPrice() {
-    return Math.round(Math.floor(this.price));
-  }
+ 
 
 }

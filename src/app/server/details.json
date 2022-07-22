@@ -7,9 +7,9 @@
     "phone": 9856735625,
     "menuId":1,
     "foodImages": ["https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://images.unsplash.com/photo-1626776877921-f8d7b932bafc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=889&q=80","https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"],
-    "menuName": "Momo",
-    "foodDescription": "Momo are bite-size dumplings made with a spoonful of stuffing wrapped in dough. Momo are usually steamed, though they are sometimes fried or steam-fried. Meat or vegetables fillings becomes succulent as it produces an intensively flavored broth sealed inside the wrappers.",
-    "foodPrice": 150,
+    "menuName": ["Tandoori Momo","Steamed Momo", "Afghani Momo"],
+    "foodDescription": ["Marinated with extra spicy tandoor masala", "Delicious dimsums all hot and delicious","Get a taste of the afghani style Momo"],
+    "foodPrice": [300,150,350],
     "quantity": 1
         
 },
@@ -23,9 +23,9 @@
     "phone": 9856735654,
     "menuId":2,
     "foodImages": ["https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80","https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80"],
-    "menuName": "Pizza",
-    "foodDescription": "Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.",
-    "foodPrice": 450,
+    "menuName": ["Herb Pizza", "Chicken Sausage Pizza", "Chicken Keema Pizza"],
+    "foodDescription": ["Pizza dough brushed with garlic oil then topped with mozarella cheese and fresh herbs", "Medium-sized pizza served with hot and spicy sausages", "Pizza with perfectly minced chicken tossed in spices"],
+    "foodPrice": [250,380,690],
     "quantity": 1
 
 },
@@ -38,9 +38,9 @@
     "phone": 9356715625,
     "menuId":3,
     "foodImages": ["https://images.unsplash.com/photo-1505714197102-6ae95091ed70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "https://media.istockphoto.com/photos/caesar-salad-vegetable-salad-with-roast-chicken-meat-on-wooden-picture-id1264431895?s=612x612", "https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"],
-    "menuName": "Chicken Salad",
-    "foodDescription": "Chicken salad is any salad with chicken as a main ingredient. Other common ingredients may include mayonnaise, hard-boiled egg, celery, onion, pepper, pickles (or pickle relish) and a variety of mustards.",
-    "foodPrice": 550,
+    "menuName": ["Chicken Salad","Tofu Rice", "Vegan Mac and Cheese"],
+    "foodDescription": ["Minced chicken tossed in herbs","Perfectly steamed rice with tofu", "Purely vegan cheese used"],
+    "foodPrice":[550,600,300],
     "quantity": 1
 }]
 

@@ -15,11 +15,31 @@
           </a>
         </div>
 
-        <h1>{{MenuDetails.menuName}}</h1>
-        <p>Price : Rs. {{MenuDetails.foodPrice}}</p>
-        <p>Description - {{MenuDetails.foodDescription}}</p>
-        <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice)">Add To
-          Cart</button>
+        <div class="firstfood">
+          <h1 class="first-menu">{{MenuDetails.menuName[0]}}</h1>
+          <p class="first-price">Price : {{MenuDetails.foodPrice[0] | currency:'INR'}}</p>
+          <p class="first-description">{{MenuDetails.foodDescription[0]}}</p>
+          <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice[0])">Add To
+            Cart</button>
+        </div>
+
+        <div class="secondfood">
+          <h1 class="second-menu">{{MenuDetails.menuName[1]}}</h1>
+          <p class="second-price">Price : {{MenuDetails.foodPrice[1] | currency:'INR'}}</p>
+          <p class="second-description">{{MenuDetails.foodDescription[1]}}</p>
+          <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice[1])">Add To
+            Cart</button>
+        </div>
+
+        <div class="thirdfood">
+          <h1 class="third-menu">{{MenuDetails.menuName[2]}}</h1>
+          <p class="third-price">Price : {{MenuDetails.foodPrice[2] | currency:'INR'}}</p>
+          <p class="third-description">{{MenuDetails.foodDescription[2]}}</p>
+          <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice[2])">Add To
+            Cart</button>
+        </div>
+
+
         <div class="d-flex w-50" *ngIf="addButton">
           <br><br>
         </div>

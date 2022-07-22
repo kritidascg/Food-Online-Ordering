@@ -48,17 +48,17 @@ export class CartComponent implements OnInit {
   }
 
   stepUp(price:number){
-    this.products.quantity ++;
+    this.productQuantity ++;
     this.totalCartPrice= this.totalCartPrice+ this.products.foodPrice;
     console.log(this.totalCartPrice);
 
  }
  stepDown(price:number){
-   if (this.products.quantity !== 0 && this.products.foodPrice !== 0)
-   this.products.quantity --;
+   if (this.productQuantity !== 0 && this.products.foodPrice !== 0)
+   this.productQuantity --;
    this.totalCartPrice= this.totalCartPrice-this.products.foodPrice;
 
-     if(this.products.quantity===0){
+     if(this.productQuantity===0){
        alert("Select quantity")
        this.totalCartPrice=0;
      }

@@ -13,21 +13,20 @@
                             <th>Quantity</th>  
                             </tr>
                     </thead>
-                    <tbody>
-                        <tbody *ngFor= "let item of products; let i = index">
-                            <tr *ngFor= "let menuitems of item;">
+                            <tbody *ngFor= "let item of products; let i = index">
+                            <tr >
                             <td>{{i+1}}</td>
-                            <td><img style="width: 70px; height: 90px;" src="{{menuitems.foodImages}}" alt=""></td>
-                            <td style="width: 25%;">{{menuitems.menuName}}</td>
-                            <td style><h2>Rs.{{menuitems.foodPrice}}</h2></td>
+                            <td><img style="width: 70px; height: 90px;" src="{{item.foodImages}}" alt=""></td>
+                            <td style="width: 25%;">{{item.menuName}}</td>
+                            <td style><h2>Rs.{{item.foodPrice}}</h2></td>
 
                             <td> <button class="btn btn-link px-5"
-                                (click)="stepUp(foodPrice,i)">
+                                (click)="stepUp(item.foodPrice,i)">
                                 <i class="fa fa-plus"></i>
                             </button>
                             <span>{{productQuantity[i]}}</span> 
                             <button class="btn btn-link px-5"
-                            (click)="stepDown(foodPrice,i)">
+                            (click)="stepDown(item.foodPrice,i)">
                             <i class="fa fa-minus"></i>
                         </button></td>
                         </tr>
@@ -41,6 +40,9 @@
                           <td></td>
                         </tr>                        
        
+                        
+                    </tbody>
+                    <tbody>
                         <tr>
                             <td colspan="4"></td>
                             <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>

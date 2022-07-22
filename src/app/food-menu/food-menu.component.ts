@@ -40,9 +40,9 @@ export class FoodMenuComponent implements OnInit {
 
   }
 
-  add(item: any, price: number) {
+  add(item: any) {
     this.cartService.addtoCart(item);
-    this.router.navigate(['cart', this.MenuDetails.foodPrice[2]]);
+    this.router.navigate(['cart']);
   }
 
 

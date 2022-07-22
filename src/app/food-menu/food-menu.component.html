@@ -1,26 +1,21 @@
 <body>
   <div class="container d-flex">
-    <div class="col-lg-4">
+    <div class="col-lg-4" *ngFor="let md of MenuDetails.foodMenu; let i=index">
 
-      <div class="foodbox">
-        <div class="firstitem">
-          <a>
-            <img class="first" src="{{MenuDetails.foodImages[0]}}">
-          </a>
-          <a>
-            <img class="second" src="{{MenuDetails.foodImages[1]}}">
-          </a>
-          <a>
-            <img class="third" src="{{MenuDetails.foodImages[2]}}">
-          </a>
-        </div>
-
-        <div class="foodmenu" *ngFor="let md of MenuDetails; let i=index">
-          <div *ngFor="let items of md">
-          <h1 class="first-menu">{{items.menuName[i]}}</h1>
-          <p class="first-price">Price : {{items.foodPrice | currency:'INR'}}</p>
-          <p class="first-description">{{items.foodDescription}}</p>
-          <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,items.foodPrice)">Add To
+      <div class="foodbox" >
+        
+        <div class="foodmenu" >
+          <div >
+            <div class="firstitem">
+              <a>
+                <img class="first" src="{{md.foodImages}}">
+              </a>
+               </div>
+    
+          <h1 class="first-menu">{{md.menuName}}</h1>
+          <p class="first-price">Price : {{md.foodPrice | currency:'INR'}}</p>
+          <p class="first-description">{{md.foodDescription}}</p>
+          <button class="btn btn-success" *ngIf="!addButton" (click)="add(md)">Add To
             Cart</button>
         </div>
       </div>

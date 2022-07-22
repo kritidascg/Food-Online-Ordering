@@ -1,30 +1,10 @@
 <body>
-    <div class="container d-flex">
+  <div class="container d-flex">
     <div class="col-lg-4">
 
-        <div class="foodbox">
-
-             <!-- <ngb-carousel *ngIf= "images">
-                <ng-template ngbSlide>
-                  <div class="picsum-img-wrapper">
-                    <img [src]="MenuDetails.images[0]" alt="Random second slide">
-                  </div>
-                </ng-template>
-                <ng-template ngbSlide>
-                    <div class="picsum-img-wrapper">
-                    
-                     <img [src]="MenuDetails.images[1]" alt="Random third slide">
-                    </div>
-                  </ng-template>
-                  <ng-template ngbSlide>
-                    <div class="picsum-img-wrapper">
-                    
-                      <img [src]="MenuDetails.images[2]" alt="Random first slide">
-                    </div>
-                  </ng-template>
-            </ngb-carousel> -->
-            <div class="firstitem">
-              <a>
+      <div class="foodbox">
+        <div class="firstitem">
+          <a>
             <img class="first" src="{{MenuDetails.foodImages[0]}}">
           </a>
           <a>
@@ -34,20 +14,18 @@
             <img class="third" src="{{MenuDetails.foodImages[2]}}">
           </a>
         </div>
-                  
-            <h1>{{MenuDetails.menuName}}</h1>
-            <p>Price : Rs. {{MenuDetails.foodPrice}}</p>
-            <p>Description - {{MenuDetails.foodDescription}}</p>
-            <button class="btn btn-success" *ngIf= "!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice)">Add To Cart</button> 
-            <div class="d-flex w-50" *ngIf="addButton">
-                <br><br>
-            </div>
 
-                
-</div>
+        <h1>{{MenuDetails.menuName}}</h1>
+        <p>Price : Rs. {{MenuDetails.foodPrice}}</p>
+        <p>Description - {{MenuDetails.foodDescription}}</p>
+        <button class="btn btn-success" *ngIf="!addButton" (click)="add(MenuDetails,MenuDetails.foodPrice)">Add To
+          Cart</button>
+        <div class="d-flex w-50" *ngIf="addButton">
+          <br><br>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 </body>
-

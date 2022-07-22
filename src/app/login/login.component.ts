@@ -35,23 +35,17 @@ export class LoginComponent implements OnInit {
   
     onLogin()
     {
-      if(this.loginForm.valid)
-      {
-        console.log(this.loginForm.value);
-        this.authservice.onLogin(this.loginForm.value).subscribe(result=>{
-          if(result!=null)
-          {
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
-        alert("Logged In Successfully");
-            this.route.navigate(['']);
-          }
-          else{
-            alert("Sign Up to continue")
-            this.route.navigate(['signup']);
-          }
+      this.authservice.onLogin(this.loginForm.value).subscribe(res=> {
+        if(res!=null)
+        {
+          localStorage.setItem("loginForm", JSON.stringify(this.loginForm.value));
+          this.route.navigate(['']);
         }
-          )
+      }, error =>{
+        alert(error.message);
+        this.route.navigate(['signup']);
       }
+        );
     }
 }
 

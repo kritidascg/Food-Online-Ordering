@@ -36,13 +36,16 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td>Total Amount: {{totalCartPrice}}</td>
                           <td></td>
                         </tr>                        
        
                         
                     </tbody>
                     <tbody>
+                        <tr class="price-row">
+                            <th>Total Price :</th>
+                            <td>₹{{totalCartPrice}}</td>
+                        </tr>
                         <tr>
                             <td colspan="4"></td>
                             <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>

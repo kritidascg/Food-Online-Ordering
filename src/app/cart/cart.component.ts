@@ -28,10 +28,9 @@ export class CartComponent implements OnInit {
     for (let i = 0; i <= this.products.length; i++) {
       this.productQuantity[i] = 1;
     }
-    this.products.forEach((e: { foodPrice: any; })=>
-      {
-        this.totalCartPrice+= e.foodPrice;
-      })
+    this.products.forEach((e: { foodPrice: any; }) => {
+      this.totalCartPrice += e.foodPrice;
+    })
 
   }
   removeItem(item: any) {
@@ -53,17 +52,19 @@ export class CartComponent implements OnInit {
   stepUp(price: number, i: number) {
     this.productQuantity[i]++;
     this.totalCartPrice = this.totalCartPrice + price;
-    console.log(this.totalCartPrice)
-  }
-  stepDown(price: number, i: number) {
-    if (this.productQuantity !== 0 && this.foodPrice !== 0)
-      this.productQuantity[i]--;
-    this.totalCartPrice = this.totalCartPrice - price;
-
-    if (this.productQuantity === 0) {
-      alert("Select quantity")
-      this.totalCartPrice == 0;
     }
+
+  stepDown(price: number, i: number) {
+    if (this.productQuantity[i] !== 0 && this.foodPrice !== 0) {
+      this.productQuantity[i]--;
+      this.totalCartPrice = this.totalCartPrice - price;
+      }
+      else{
+      if(this.productQuantity === 0)
+      alert("Select quantity")
+      }
+
+    
   }
 }
 

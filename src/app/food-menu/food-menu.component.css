@@ -8,63 +8,32 @@
 .foodbox 
 {   
     color: #fff;
-    
+    height: 550px;    
 } 
 
 .first
 {
   width: 80%;
   height: 250px;
+  padding: 10px;
   border-radius: 8px;
   margin-top: 60px;
-  margin-left: 50px;
-}
-.second
-{
-  width: 80%;
-  height: 250px;
-  border-radius: 8px;
-  margin-top: -280px;
-  margin-left: 380px;
-}
-.third
-{
-  width: 80%;
-  height: 250px;
-  border-radius: 8px;
-  margin-top: -330px;
-  margin-left: 710px;
+  margin-left: 37px;
 }
 
-.firstfood
-{
-  margin-left: 50px;
+.first-menu,.first-price,.first-description{
+  margin-left: 45px;
+  margin-top: 20px;
 }
-
-.secondfood
-{
-  margin-left: 380px;
-  margin-top: -170px;
-  width: 80%;
-  height: 250px;
-}
-
-.thirdfood
-{ 
-  margin-left: 710px;
-  margin-top: -250px;
-  width: 80%;
-
-}
-
-.first-description,.second-description,.third-description
+.first-description
 {
   font-style: italic;
 }
 
 .btn-success,.btn-danger
 {
-    margin-bottom: 10px;
+  margin-left: 45px;
+  margin-top: 20px;
 }
 
 .buybtn

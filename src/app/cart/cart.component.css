@@ -4,7 +4,20 @@
     margin: 25px;
     padding: 25px;
 }
+.table-responsive
+{
+    margin-left: 70px;
+    margin-top: 30px;
+}
 
+.fa-plus,.fa-minus{
+    margin-left: -50px;
+}
+.quantity
+{
+    margin-left: 19px;
+    margin-top: 15px;
+}
 .center img
 {
     text-decoration: none;
@@ -35,9 +48,7 @@ i{
 .btn{
     border:1px;
 }
-.btn btn-danger{
-    padding-right: 5px;
-}
+
 .price-row
 {
     margin-left: 320px;

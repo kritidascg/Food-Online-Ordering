@@ -23,18 +23,22 @@ export class CartComponent implements OnInit {
       .subscribe(res => {
         this.products = res;
       });
-    console.log(this.products);
-
+    
     for (let i = 0; i <= this.products.length; i++) {
       this.productQuantity[i] = 1;
-    }
+      }
     this.products.forEach((e: { foodPrice: any; }) => {
       this.totalCartPrice += e.foodPrice;
     })
+    
 
   }
   removeItem(item: any) {
     this.cartService.removeCartItem(item);
+    this.totalCartPrice=this.totalCartPrice;
+    if(confirm("Are you sure to delete this item?")) {
+      console.log("Implement delete functionality here");
+    }
   }
   emptyCart() {
     this.cartService.removeAllCart();
@@ -60,8 +64,8 @@ export class CartComponent implements OnInit {
       this.totalCartPrice = this.totalCartPrice - price;
       }
       else{
-      if(this.productQuantity === 0)
-      alert("Select quantity")
+       this.totalCartPrice= this.totalCartPrice-this.foodPrice; 
+       alert("Select quantity")
       }
 
     

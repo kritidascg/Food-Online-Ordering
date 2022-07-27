@@ -6,6 +6,16 @@
     padding: 20px 20px 20px 20px;
     border: 40px solid black;
 }
+.form-control{
+    background: url("https://media.istockphoto.com/vectors/grey-cement-texture-of-floor-vector-3d-backdrop-of-gray-concrete-wall-vector-id1319844646?k=20&m=1319844646&s=612x612&w=0&h=LFPrYmCNHf35mIQgEmTHacXM32W9Jdpxg0OvKycWZK8=");
+   
+    align-items: center;
+    margin-left:220px;
+    width: 800px;
+    border-radius: 30px;
+    
+   
+}
 
 .foodbox img
 {

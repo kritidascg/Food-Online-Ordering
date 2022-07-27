@@ -3,11 +3,27 @@
     height: 60vh;
     margin: 25px;
     padding: 25px;
+    
+}
+.card-table
+{
+    background-color: rgb(119, 63, 63);
+    width: 1115px;
+}
+
+.btn-danger
+{
+    margin-right: 90px;
 }
 .table-responsive
 {
     margin-left: 70px;
     margin-top: 30px;
+    border: 0px solid rgb(119, 63, 63);
+}
+
+th,td{
+    color: white;
 }
 
 .fa-plus,.fa-minus{

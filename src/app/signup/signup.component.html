@@ -1,31 +1,32 @@
-<div class="box">
+<body>
+    <div class="box">
     <form [formGroup]= "registrationForm" (ngSubmit)= "onRegister(registrationForm.value)" class="border p-3 rounded-3">
         <div class="row g-0">
             <div class="col text-center p-2 mb-3 bg-light">
                 <span class="fs-3">SIGN UP</span>
             </div>
         </div><br/>
-        <div class="row">
-                <label for="username" class="form-label">Username*</label>
+        <div class="input">
+                <label for="username" class="form-label" placeholder="Username*">Username*</label>
                 <input type="text" formControlName= "username" id="username" required>
         </div><br>
-        <div class="row">
-                <label for="password" class="form-label">Password*</label>
+        <div class="input">
+                <label for="password" class="form-label" placeholder="Password">Password*</label>
                 <input type="password" formControlName= "password"  id="password" required>
                 <p class="help"
                 *ngIf="registrationForm.get('password').hasError('strongPassword')">
                  Must have at least one number, one lowercase and one uppercase letter.</p>
                 <div class="form-text"></div> 
         </div><br>
-        <div class="row">
-            <label for="phone" class="form-label">Phone Number</label>
+        <div class="input">
+            <label for="phone" class="form-label" placeholder="Phone Number">Phone Number</label>
             <input type="number" formControlName= "phone"  id="phone">
     </div><br>
-    <div class="row">
-        <label for="email" class="form-label">Email Address</label>
+    <div class="input">
+        <label for="email" class="form-label" placeholder="Email Address">Email Address</label>
         <input type="email" formControlName= "email"  id="email">
     </div><br>
-    <div class="row">
+    <div class="input">
         <div class="col-6 offset-3">
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Sign Up</button>
@@ -34,5 +35,5 @@
     </div>
     </form>
     </div>
-
+</body>
     <app-footer></app-footer>

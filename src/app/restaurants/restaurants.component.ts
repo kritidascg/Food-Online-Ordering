@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RestaurantService } from 'src/services/restaurant-service';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './restaurants.component.html',
@@ -30,11 +31,6 @@ export class RestaurantComponent implements OnInit {
 
   }
 
-
-  // displaymenuitem(i:number) {
-  //       this.router.navigate(['menu',this.menuId])
-  
-  // }
 }
   
   

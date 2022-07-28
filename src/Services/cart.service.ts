@@ -18,6 +18,15 @@ export class CartService {
   }
 
   addtoCart(product : any){
+    // const productExistInCart = this.cartItemList.find(({menuId}) => menuId === product.name);
+    // if (!productExistInCart) {
+    //   this.cartItemList.push({...product, quantity:1});
+    //   this.productList.next(this.cartItemList);// enhance "porduct" opject with "num" property
+    //   return;
+
+    // }
+
+    // productExistInCart.num += 1;
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     console.log(this.cartItemList)

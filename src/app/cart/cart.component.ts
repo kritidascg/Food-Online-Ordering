@@ -33,13 +33,7 @@ export class CartComponent implements OnInit {
     
 
   }
-  removeItem(item: any) {
-    this.cartService.removeCartItem(item);
-    this.totalCartPrice=this.totalCartPrice;
-    if(confirm("Are you sure to delete this item?")) {
-      console.log("Implement delete functionality here");
-    }
-  }
+  
   emptyCart() {
     this.cartService.removeAllCart();
     this.totalCartPrice = 0;
@@ -63,10 +57,13 @@ export class CartComponent implements OnInit {
       this.productQuantity[i]--;
       this.totalCartPrice = this.totalCartPrice - price;
       }
-      else{
-       this.totalCartPrice= this.totalCartPrice-this.foodPrice; 
-       alert("Select quantity")
+      
+      if (this.productQuantity[i] == 0) {
+        alert("Are you sure you want to delete this item?");
+          this.cartService.removeCartItem(this.products[i]);
       }
+  
+       
 
     
   }

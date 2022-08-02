@@ -15,7 +15,7 @@
           <h1 class="first-menu">{{md.menuName}}</h1>
           <p class="first-price">Price : {{md.foodPrice | currency:'INR'}}</p>
           <p class="first-description">{{md.foodDescription}}</p>
-          <button class="btn btn-success" *ngIf="!addButton" (click)="add(md)">Add To
+          <button id="add" class="btn btn-success" *ngIf="!addButton" (click)="add(md)">Add To
             Cart</button>
         </div>
       </div>

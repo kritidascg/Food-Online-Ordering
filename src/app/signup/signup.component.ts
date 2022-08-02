@@ -29,16 +29,7 @@ onRegister(data: any)
 {
   this.router.navigate(['login']);
   alert("You are signed in");
-  // this.service.registerUser(this.registrationForm.value)
-  // .subscribe(result=>
-  // {
-  //   if(result!=null)
-  //   {
-  //     this.router.navigate(['login']);
-  //   }
-  // })
   
-
 }
 
 }

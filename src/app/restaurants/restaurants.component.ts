@@ -10,12 +10,9 @@ import { RestaurantService } from 'src/services/restaurant-service';
 })
 export class RestaurantComponent implements OnInit {
 
-  restId: string= ''; 
-  public filterCategory : any
   searchKey:string ="";
   public restaurantDetails: any;
-  price!: number;
-  i: any;
+   i: any;
   
   constructor(private service:RestaurantService, private router: Router) { }
 

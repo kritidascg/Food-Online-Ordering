@@ -1,6 +1,6 @@
 form{
     width: 500px;
-    height: 470px;
+    height: 440px;
     border-style: double;
     background-color: white;
     border: none;
@@ -15,10 +15,10 @@ form{
   top: 20px;
   opacity: 1;
   float: left;
-  padding: 60px 50px 40px 50px;
+  padding: 60px 50px 60px 50px;
   width: 100%;
   background: url("https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-  border-radius: 10px;
+  border-radius: 5px;
   transform: scale(1);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);

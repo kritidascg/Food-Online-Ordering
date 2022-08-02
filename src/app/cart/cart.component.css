@@ -3,8 +3,21 @@
     height: 60vh;
     margin: 25px;
     padding: 25px;
+      
+}
+
+h4,h6
+{
+    color: #0f0e0e;
+}
+
+.price-card
+{
+    margin-left: -260px;
     
 }
+
+
 .card-table
 {
     background-color: rgb(119, 63, 63);
@@ -22,7 +35,20 @@
     border: 0px solid rgb(119, 63, 63);
 }
 
-th,td{
+.card-menu{
+
+    margin-bottom: 10px;
+    align-items: center;
+    width: 920px; 
+    height: 160px;  
+    margin-left: 20px; 
+    margin-top:20px;
+    background-color: rgb(148, 134, 134);
+    border:none;
+    box-shadow: 2px 2px 2px 2px #d3d2d2;
+}
+
+th,td,h4{
     color: white;
 }
 

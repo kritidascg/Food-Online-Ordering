@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { IRestaurantDetails } from 'src/models/restaurantDetails';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  public search = new BehaviorSubject<string>("");
-  
+   
   
   private url: string= "http://localhost:3000/restaurant";
   

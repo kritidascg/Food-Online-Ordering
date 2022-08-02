@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <ng-container *ngIf="products.length!=0">
     <div class="container">
         <div class="card-table">
@@ -6,21 +7,19 @@
                 <table class="table table-responsive">
                     <thead>
                         <tr>
-                            <th>Sr.No</th>
-                            <th>Food Image</th>
-                            <th>Food Name</th> 
-                            <th>Price</th>
-                            <th>Quantity</th>  
+                            <h1 style="color: white; margin-left:400px;">MY CART</h1>
+                           
                             </tr>
                     </thead>
+                    
                             <tbody *ngFor= "let item of products; let i = index">
                             <tr >
+                                <div class="card-menu" style="width: 90 rem; height: 20 rem;">
                             <td>{{i+1}}</td>
-                            <td><img style="width: 150px; height: 90px;" src="{{item.foodImages}}" alt=""></td>
-                            <td style="width: 20%;">{{item.menuName}}</td>
-                            <td style="width: 20%;"><h3>Rs.{{item.foodPrice}}</h3></td>
-                             
-                            
+                            <td><img style="width: 150px; height: 90px; margin-left: 10px; margin-right: 70px;" src="{{item.foodImages}}" alt=""></td>
+                            <td style="width: 50%; margin-left: 90px;">{{item.menuName}}</td>
+                            <td style="width: 70%; margin-left: 190px;"><h3>Rs.{{item.foodPrice}}</h3></td>
+                                                        
                             <td> <button  class="btn btn-link px-5"
                                 (click)="stepUp(item.foodPrice,i)">
                                 <i class="fa fa-plus"></i>
@@ -30,11 +29,10 @@
                             (click)="stepDown(item.foodPrice,i)">
                             <i class="fa fa-minus"></i>
                         </button></td>
-                        <td>
-                            <button (click)="removeItem(item)" class="btn btn-danger">Delete</button>
-                        </td>
-                
+                        
+                    </div>
                         </tr>
+                    
                         
                         <tr >
                           <td></td>
@@ -48,16 +46,19 @@
                     </tbody>
                     <tbody>
                            <tr class="price-row">
-                            <td colspan="3"></td>
+                            <td colspan="1"></td>
+                            <div class="price-card">
                             <th>Total Price :</th>
                             <td><h3>₹{{totalCartPrice}}</h3></td>
+                        </div>
                         </tr>
                         <tr>
-                            <td colspan="2"></td>
+                            <div class="card-more" style="margin-left: 260px; margin-right: 30px;">
+                            <td colspan="1"></td>
                             <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
-                            <td><button (click)="shopMore()" class="btn btn-primary">Shop More</button></td>
-                            <td><button (click)="checkout()" class="btn btn-success">Checkout</button></td>
-                            
+                            <td style="margin-right: 490px;"><button (click)="shopMore()" class="btn btn-primary">Add More</button></td>
+                            <td><button (click)="checkout()" class="btn btn-success">Place Order -> </button></td>
+                        </div>
                         </tr>
                     </tbody>
                 </table>
@@ -65,7 +66,6 @@
         </div>
     </div>
 </ng-container>
-
 
 
 
@@ -83,3 +83,4 @@
     </div>
  
 </ng-container>
+

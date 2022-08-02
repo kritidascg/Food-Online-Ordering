@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RestaurantComponent } from './restaurants/restaurants.component';
 import { SignupComponent } from './signup/signup.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: '', component:HomeComponent,canActivate:[AuthGuard]},
   {path: 'login', component:LoginComponent},
   {path: 'restaurants', component:RestaurantComponent, canActivate:[AuthGuard]},

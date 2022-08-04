@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
 import { RestaurantComponent } from './restaurants/restaurants.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -19,6 +20,7 @@ export const routes: Routes = [
   {path: 'cart', component:CartComponent, canActivate:[AuthGuard]},
   {path: 'checkout', component:CheckoutCartComponent},
   {path: 'signup', component:SignupComponent},
+  {path: 'success', component:OrdersuccessComponent},
   {path: 'contact', component:ContactComponent},
 ];
 

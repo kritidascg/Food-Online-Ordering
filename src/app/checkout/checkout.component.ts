@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckoutCartComponent implements OnInit {
   checkOutForm: any;
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
     this.checkOutForm= new FormGroup({
@@ -25,6 +26,6 @@ export class CheckoutCartComponent implements OnInit {
       'state': new FormControl('', Validators.required)}); 
   }
   orderPlaced(){
-    alert("Your order is placed! It will be delivered to you in" + " " + "30 minutes!!");
+    this.route.navigate(['success']);
   }
 }

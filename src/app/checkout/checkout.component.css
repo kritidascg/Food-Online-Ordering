@@ -1,8 +1,4 @@
-body {
-    font-family: Arial;
-    font-size: 17px;
-    padding: 8px;
-  }
+
   
   h3{
     color: rgb(18, 67, 5);
@@ -13,6 +9,11 @@ body {
     box-sizing: border-box;
     
   }
+
+  .col-250
+  {
+    background-color: black;
+  }
   
   .row {
     display: -ms-flexbox; /* IE10 */
@@ -22,56 +23,58 @@ body {
     margin: 0 -16px;
   }
   
-  .col-25 {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;
-  }
-  
-  .col-50 {
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%;
-  }
-  
-  .col-75 {
-    -ms-flex: 75%; /* IE10 */
-    flex: 75%;
-  }
-  
-  .col-25,
+  .col-250,
   .col-50,
   .col-75 {
     padding: 0 16px;
   }
+
+  .col-250
+  {
+    margin-left: 600px;
+    margin-top: -485px;
+    width: 555px;
+    height: 510px;
+  }
   
   .container {
-    background-color: #adfab2;
+    background-color:var(--primary-color);
+    width: 600px;
+    height: 510px;
+    margin-left: 50px;
+    margin-top: 30px;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
   }
   
   input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
+    width: 50%;
+    margin-left: 150px;
+    margin-bottom: 15px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
   
   label {
     margin-bottom: 10px;
+    margin-left: 150px;
+    color: white;
     display: block;
   }
-  
+
+    
   .icon-container {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left: 150px;
     padding: 7px 0;
     font-size: 24px;
   }
   
   .btn {
-    background-color: #04AA6D;
-    color: white;
+    background-color: white;
+    color: #04AA6D;
     padding: 12px;
     margin: 10px 0;
     border: none;
@@ -82,7 +85,7 @@ body {
   }
   
   .btn:hover {
-    background-color: #45a049;
+    background-color: white;
   }
   
   a {
@@ -99,12 +102,13 @@ body {
   }
 
   button{
-    background-color: #45a049;
-    color: white;
+    background-color: rgb(122, 6, 6);
+    color: #ecf9ec;
+    margin-top: 20px;
     margin-left: 300px;
     height:50px;
     width:500px;
     border:none;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
+    font-size: large;
   } 

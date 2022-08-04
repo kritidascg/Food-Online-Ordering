@@ -1,14 +1,22 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1516865131505-4dabf2efc692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
+    overflow-y: scroll;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
 .card
 {
-    height: 60vh;
+    height: 40vh;
     margin: 25px;
     padding: 25px;
       
 }
 
-h4,h6
+h2
 {
-    color: #0f0e0e;
+    color: black;
+    font-weight: bold;
 }
 
 .price-card
@@ -17,10 +25,14 @@ h4,h6
     
 }
 
+.container-more
+{
+    background-color: white;
+}
 
 .card-table
 {
-    background-color: rgb(119, 63, 63);
+    background-color: transparent;
     width: 1115px;
 }
 
@@ -32,7 +44,7 @@ h4,h6
 {
     margin-left: 70px;
     margin-top: 30px;
-    border: 0px solid rgb(119, 63, 63);
+    border: 0px solid transparent;
 }
 
 .card-menu{
@@ -43,9 +55,9 @@ h4,h6
     height: 160px;  
     margin-left: 20px; 
     margin-top:20px;
-    background-color: rgb(148, 134, 134);
+    background-color: rgb(132, 183, 143);
     border:none;
-    box-shadow: 2px 2px 2px 2px #d3d2d2;
+    box-shadow: 2px 2px 2px 2px #86b386;
 }
 
 th,td,h4{
@@ -68,14 +80,17 @@ th,td,h4{
     outline: none;
     height: 154px;
     width: 250px;
-    margin: 20px 0px;
+    margin: 50px 0px;
 }
 
 .center
 {
     position: absolute;
-    top: 40%;
+    top: 55%;
+    width: 500px;
+    height: 380px;
     left: 50%;
+    background-color: aliceblue;
     transform: translate(-50%, -50%);
     text-align: center;
 }

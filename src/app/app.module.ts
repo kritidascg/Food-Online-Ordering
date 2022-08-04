@@ -24,6 +24,7 @@ import { FilterPipe } from 'src/models/filter.pipe';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutCartComponent } from './checkout/checkout.component';
+import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { CheckoutCartComponent } from './checkout/checkout.component';
     CartComponent,
     FilterPipe,
     CheckoutCartComponent,
+    OrdersuccessComponent,
       ],
   imports: [
     BrowserModule,

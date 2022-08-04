@@ -19,7 +19,17 @@ export class CartService {
   addtoCart(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
-    console.log(this.cartItemList)
+    this.cartItemList.map((cartItem: { menuId: any; quantity: number; }) =>
+      {
+        if(cartItem.menuId===product.menuId)
+        {
+          ++cartItem.quantity;
+        }
+        else{
+          this.cartItemList.push(product);
+          this.productList.next(this.cartItemList);
+        }
+      })
     }
 
    removeCartItem(product: any){

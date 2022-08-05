@@ -16,7 +16,8 @@ body{
 h2
 {
     color: black;
-    font-weight: bold;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .price-card
@@ -55,22 +56,31 @@ h2
     height: 160px;  
     margin-left: 20px; 
     margin-top:20px;
-    background-color: rgb(132, 183, 143);
+    background-color: rgb(246, 255, 248);
     border:none;
     box-shadow: 2px 2px 2px 2px #86b386;
 }
 
 th,td,h4{
-    color: white;
+    color: black;
+}
+
+h3{
+    color: aliceblue;
+    font-weight: bold;
+    font-style: oblique;
 }
 
 .fa-plus,.fa-minus{
+    margin-top: -50px;
     margin-left: -50px;
 }
+
 .quantity
 {
     margin-left: 19px;
-    margin-top: 15px;
+    margin-top: -15px;
+    margin-bottom: 50px;
 }
 .center img
 {
@@ -103,7 +113,8 @@ i{
     color: black;
 }
 .btn{
-    border:1px;
+    border: 10px;
+    margin-top: -60px;
 }
 
 .price-row

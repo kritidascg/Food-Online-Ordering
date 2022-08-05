@@ -1,3 +1,4 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/services/cart.service';
@@ -12,23 +13,20 @@ export class CartComponent implements OnInit {
   foodPrice: any;
   public products: any = [];
   totalCartPrice: number = 0;
-  productQuantity: any = [];
-
-
+ 
   constructor(private cartService: CartService, public service: RestaurantService, private actRoute: ActivatedRoute, private router: Router) { }
 
 
-  ngOnInit() {
+  ngOnInit():void {
     this.cartService.getProducts()
       .subscribe(res => {
         this.products = res;
       });
     
-    for (let i = 0; i <= this.products.length; i++) {
-      this.productQuantity[i] = 1;
-      }
-    this.products.forEach((e: { foodPrice: any; }) => {
-      this.totalCartPrice += e.foodPrice;
+      this.products.forEach((e: {
+        quantity: any; foodPrice: any; 
+}) => {
+      this.totalCartPrice += e.foodPrice * e.quantity;
     })
     
 
@@ -47,21 +45,24 @@ export class CartComponent implements OnInit {
     this.router.navigate(['checkout']);
   }
 
-  stepUp(price: number, i: number) {
-    this.productQuantity[i]++;
-    this.totalCartPrice = this.totalCartPrice + price;
+  stepUp(item: any) {
+    ++item.quantity;
+    this.totalCartPrice = this.totalCartPrice + item.foodPrice;
     }
 
-  stepDown(price: number, i: number) {
-    if (this.productQuantity[i] !== 0 && this.foodPrice !== 0) {
-      this.productQuantity[i]--;
-      this.totalCartPrice = this.totalCartPrice - price;
-      }
-      
-      if (this.productQuantity[i] == 0) {
+  stepDown(item:any) {
+    if (item.quantity > 0) {
+      if(item.quantity===1){
         alert("Are you sure you want to delete this item?");
-          this.cartService.removeCartItem(this.products[i]);
+        this.cartService.removeCartItem(item);
       }
+       else {
+        --item.quantity;
+      }
+
+    this.totalCartPrice = this.totalCartPrice - item.foodPrice;
+  
+    }
   
        
 

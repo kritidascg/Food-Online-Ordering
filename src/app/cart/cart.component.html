@@ -16,17 +16,17 @@
                             <tr >
                                 <div class="card-menu" style="width: 90 rem; height: 20 rem;">
                             <td>{{i+1}}</td>
-                            <td><img style="width: 150px; height: 90px; margin-left: 10px; margin-right: 70px;" src="{{item.foodImages}}" alt=""></td>
-                            <td style="width: 50%; margin-left: 90px;">{{item.menuName}}</td>
-                            <td style="width: 70%; margin-left: 190px;"><h3>Rs.{{item.foodPrice}}</h3></td>
+                            <td><img style="width: 150px; height: 130px; margin-top: 8px; margin-left: 10px; margin-right: 70px;" src="{{item.foodImages}}" alt=""></td>
+                            <td style="width: 50%; margin-left: 90px; margin-top: 10px;"><h2>{{item.menuName}}</h2></td>
+                            <td style="width: 70%; margin-left: 190px;"><h2>Rs.{{item.foodPrice}}</h2></td>
                                                         
                             <td> <button  class="btn btn-link px-5"
-                                (click)="stepUp(item.foodPrice,i)">
+                                (click)="stepUp(item)">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <h4 class="quantity">{{productQuantity[i]}}</h4> 
+                            <h4 class="quantity">{{item.quantity}}</h4> 
                             <button class="btn btn-link px-5"
-                            (click)="stepDown(item.foodPrice,i)">
+                            (click)="stepDown(item)">
                             <i class="fa fa-minus"></i>
                         </button></td>
                         
@@ -48,7 +48,7 @@
                            <tr class="price-row">
                             <td colspan="1"></td>
                             <div class="price-card">
-                            <th>Total Price :</th>
+                            <th><h3>Total Price :</h3></th>
                             <td><h3>₹{{totalCartPrice}}</h3></td>
                         </div>
                         </tr>
@@ -76,7 +76,7 @@
         </div>
         <div class="center">
             <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
-            <h2>Your cart is empty!</h2>
+            <h2></h2>
             <button (click)="shopMore()" class="btn btn-primary">SHOP NOW</button>
         </div>
     </div>

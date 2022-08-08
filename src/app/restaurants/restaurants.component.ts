@@ -23,7 +23,6 @@ export class RestaurantComponent implements OnInit {
   
   orderNow(i:number)
   {
-    console.log(i);
     this.router.navigate(['menu', i]);
 
   }

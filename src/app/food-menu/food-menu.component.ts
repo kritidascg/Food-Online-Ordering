@@ -20,8 +20,7 @@ export class FoodMenuComponent implements OnInit {
     this.menuId = this.actRoute.snapshot.paramMap.get('id');
      this.service.getRestaurantDetails()
       .subscribe(data => {
-        this.MenuDetails = data[parseInt(this.menuId)].foodMenu
-        console.log(this.MenuDetails.foodMenu);
+        this.MenuDetails = data[(this.menuId)].foodMenu;
       });
   }
 

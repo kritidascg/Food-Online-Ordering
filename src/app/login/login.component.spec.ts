@@ -3,15 +3,25 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
+import { AuthService } from 'src/security/auth.service';
+import { HomeComponent } from '../home/home.component';
+import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let routerSpy = { navigate: jasmine.createSpy('org') }
+  const authServiceSpy = jasmine.createSpyObj(AuthService, ['onLogin', 'IsLoggedIn']);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      imports:[RouterTestingModule,HttpClientTestingModule, ReactiveFormsModule]
+      declarations: [ LoginComponent, AppComponent, HomeComponent ],
+      imports:[RouterTestingModule,HttpClientTestingModule, ReactiveFormsModule],
+      providers: [{ provide: Router, useValue: routerSpy },
+
+        { provide: AuthService, useValue: authServiceSpy } ]
+
     })
     .compileComponents();
   });
@@ -24,6 +34,13 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Check login button', () => {
+    const btn = fixture.debugElement.nativeElement.querySelector('#login');
+    btn.click();
+    fixture.detectChanges();
+
   });
 
   it('should have Login in "Login Button"', () => {

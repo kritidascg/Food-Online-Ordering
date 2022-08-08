@@ -28,12 +28,12 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should navigate to restaurants page on click of "Order Now"  in home page', () => {
-  //   const homeTabElement=fixture.debugElement.nativeElement.querySelector('#orderNow');
-  //   homeTabElement.click();
-  //   expect(mockRouter.navigate).toHaveBeenCalledWith(['/restaurants']);
+  it('should navigate to restaurants page on click of "Order Now"  in home page', () => {
+     const homeTabElement=fixture.debugElement.nativeElement.querySelector('#orderNow');
+     homeTabElement.click();
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/restaurants']);
      
-  // });
+   });
 
   
 });

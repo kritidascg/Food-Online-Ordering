@@ -14,7 +14,9 @@ import { CartComponent } from './cart.component';
 describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
-  let routerSpy = { navigate: jasmine.createSpy('cart') }
+  let service:CartService;
+  let item:any;
+  let routerSpy = { navigate: jasmine.createSpy('navigate') }
   const authServiceSpy = jasmine.createSpyObj(CartService, ['getProducts', 'addtoCart','removeCartItem','removeAllCart']);
   let spy:any;
   beforeEach(async () => {
@@ -26,7 +28,7 @@ describe('CartComponent', () => {
   
         providers: [
   
-          { provide: AuthService, useValue: authServiceSpy } ]
+          { provide: AuthService, Router, useValue: authServiceSpy } ]
        
     })
 
@@ -49,17 +51,35 @@ describe('CartComponent', () => {
   });
 
   it('stepUp Method is called', () => {
-  const param: any = null
-  spyOn(component, 'stepUp') 
-  component.stepUp(param)
-  expect(component.stepUp).toHaveBeenCalledWith(param);
+  component.stepUp(item);
+  expect(item.quantity).toEqual(++item.quantity);
+  expect(component.totalCartPrice).toEqual(component.totalCartPrice + component.foodPrice);
 });
 
 it('stepDown Method is called', () => {
-  const param: any = null
-  spyOn(component, 'stepDown') 
-  component.stepDown(param)
-  expect(component.stepDown).toHaveBeenCalledWith(param);
+  component.stepDown(item);
+  if(item.quantity===1)
+  {
+    expect(service.removeCartItem(item)).toBeTruthy;
+  } 
 });
   
+it('empty the cart on calling emptycart() method', () =>
+{
+  component.emptyCart();
+    expect(service.cartItemList).toBe([]);
+    expect(component.totalCartPrice).toEqual(0);
+})
+
+it('should navigate to restaurants page on click of Shop More', () =>
+{
+  component.shopMore();
+  expect (routerSpy.navigate).toHaveBeenCalledWith(['/restaurants']);
+})
+
+it('should navigate to checkout page on click of Place Order', () =>
+{
+  component.checkout();
+  expect (routerSpy.navigate).toHaveBeenCalledWith(['/checkout']);
+})
 });

@@ -9,6 +9,7 @@ export class RestaurantService {
    
   
   private url: string= "http://localhost:3000/restaurant";
+  static restaurantDetails: any;
   
   
   constructor(private http:HttpClient) { }

@@ -52,17 +52,18 @@ describe('CartComponent', () => {
 
   it('stepUp Method is called', () => {
   component.stepUp(item);
-  expect(item.quantity).toEqual(++item.quantity);
+  });
+
+it('total price increases in stepup()', () =>
+{
   expect(component.totalCartPrice).toEqual(component.totalCartPrice + component.foodPrice);
-});
+})
 
 it('stepDown Method is called', () => {
-  component.stepDown(item);
-  if(item.quantity===1)
-  {
-    expect(service.removeCartItem(item)).toBeTruthy;
-  } 
+  component.stepDown(item);   
 });
+
+
   
 it('empty the cart on calling emptycart() method', () =>
 {

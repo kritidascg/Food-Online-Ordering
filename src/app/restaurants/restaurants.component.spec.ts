@@ -12,6 +12,7 @@ describe('MenuComponent', () => {
   let component: RestaurantComponent;
   let fixture: ComponentFixture<RestaurantComponent>;
   let restaurantService:RestaurantService;
+  let i:any;
   let element;
   let routerSpy = {navigate: jasmine.createSpy('navigate')};
 
@@ -54,6 +55,10 @@ describe('MenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should execute orderNow()', ()=>
+  {
+    component.orderNow(i);
+  })
   
 
 });

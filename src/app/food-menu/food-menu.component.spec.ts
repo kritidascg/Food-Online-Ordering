@@ -10,6 +10,7 @@ describe('FoodMenuComponent', () => {
   let component: FoodMenuComponent;
   let fixture: ComponentFixture<FoodMenuComponent>;
   let menuService:RestaurantService;
+  let item:any;
   let element;
   
   beforeEach(async () => {
@@ -43,5 +44,9 @@ describe('FoodMenuComponent', () => {
     expect(component).toBeDefined();
   });
 
+  it('should run add() method', () =>
+  {
+    component.add(item);
+  })
   
 });

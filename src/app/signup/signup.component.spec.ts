@@ -9,6 +9,7 @@ import { SignupComponent } from './signup.component';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
+  let data: any;
   let fixture: ComponentFixture<SignupComponent>;
   const routerSpy = jasmine.createSpyObj('Router', ['navigate']); 
 
@@ -37,5 +38,10 @@ describe('SignupComponent', () => {
     expect(navArgs).withContext('should nav to login page')
       .toBe('/login');
   }));
+
+  it('should run onRegister() method', ()=>
+  {
+    component.onRegister(data);
+  })
 });
 

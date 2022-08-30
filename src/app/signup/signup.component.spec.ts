@@ -28,17 +28,6 @@ describe('SignupComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should tell ROUTER to navigate when button clicked', fakeAsync(() => {
-    let router = fixture.debugElement.injector.get(Router);
-    let buttonElements = fixture.debugElement.query(By.css('.btn btn-primary'));
-    buttonElements.triggerEventHandler('click', null);
-    tick();
-    const spy = router.navigateByUrl as jasmine.Spy;
-    const navArgs = spy.calls.first().args[0];
-    expect(navArgs).withContext('should nav to login page')
-      .toBe('/login');
-  }));
-
   it('should run onRegister() method', ()=>
   {
     component.onRegister(data);

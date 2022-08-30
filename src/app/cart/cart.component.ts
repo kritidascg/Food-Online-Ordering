@@ -38,11 +38,11 @@ export class CartComponent implements OnInit {
   }
 
   shopMore() {
-    this.router.navigate(['restaurants']);
+    this.router.navigate(['/restaurants']);
   }
 
   checkout() {
-    this.router.navigate(['checkout']);
+    this.router.navigate(['/checkout']);
   }
 
   stepUp(item: any) {

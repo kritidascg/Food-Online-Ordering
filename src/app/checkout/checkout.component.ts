@@ -26,6 +26,6 @@ export class CheckoutCartComponent implements OnInit {
       'state': new FormControl('', Validators.required)}); 
   }
   orderPlaced(){
-    this.route.navigate(['success']);
+    this.route.navigate(['/success']);
   }
 }

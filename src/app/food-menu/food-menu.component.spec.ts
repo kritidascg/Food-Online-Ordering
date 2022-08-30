@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { FoodMenuComponent } from './food-menu.component';
 import { RestaurantService } from "src/services/restaurant-service";
+import { CartService } from "src/services/cart.service";
 
 describe('FoodMenuComponent', () => {
   let component: FoodMenuComponent;
@@ -12,12 +13,14 @@ describe('FoodMenuComponent', () => {
   let menuService:RestaurantService;
   let item:any;
   let element;
-  
+  const ServiceSpy = jasmine.createSpyObj(CartService, ['getProducts', 'addtoCart','removeCartItem','removeAllCart']);
+  const restServiceSpy = jasmine.createSpyObj(RestaurantService, ['getRestaurantDetails']);
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FoodMenuComponent ],
       imports:[RouterTestingModule,HttpClientTestingModule],
-      providers:[RestaurantService]
+      providers:[{ provide: CartService, RestaurantService, useValue: ServiceSpy,restServiceSpy } ]
     })
     .compileComponents();
   });
@@ -29,24 +32,21 @@ describe('FoodMenuComponent', () => {
     element = fixture.nativeElement;
   }));
   
-  it("should call getRestaurantDetails and return list of menu", async(() => {
-    const response: FoodMenuComponent[] = [];
-
-    spyOn(menuService, 'getRestaurantDetails').and.returnValue(of(response))
-
-    component.ngOnInit();
-    fixture.detectChanges();
-    expect(component.MenuDetails).toEqual(response);
-  }));
-
-  
+    
   it('should create', () => {
     expect(component).toBeDefined();
   });
 
-  it('should run add() method', () =>
-  {
-    component.add(item);
-  })
+  
+  it('addToCart Method is called', () => {
+
+    const param: any = null;
+    component.add(param);
+   ServiceSpy.addtoCart();
+    expect( ServiceSpy.addtoCart).toHaveBeenCalledWith(param);
+
+   
+
+  });
   
 });

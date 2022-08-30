@@ -34,9 +34,7 @@ describe('MenuComponent', () => {
 
   it("should call getRestaurantDetails and return list of restaurants", async(() => {
     const response: RestaurantComponent[] = [];
-
     spyOn(restaurantService, 'getRestaurantDetails').and.returnValue(of(response))
-
     component.ngOnInit();
     fixture.detectChanges();
     expect(component.restaurantDetails).toEqual(response);

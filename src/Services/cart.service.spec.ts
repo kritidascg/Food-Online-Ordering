@@ -30,7 +30,7 @@ describe('CartService', () => {
   
   it('should remove a item from list', () => {
     service.removeCartItem(product);
-    expect(service.cartItemList).toBe([]);
+    expect(service.cartItemList).toEqual([]);
   });
 
   it('should remove an item if menuID same', () =>

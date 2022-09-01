@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,11 +11,13 @@ import { CheckoutCartComponent } from '../checkout/checkout.component';
 import { HomeComponent } from '../home/home.component';
 import { RestaurantComponent } from '../restaurants/restaurants.component';
 import data from '../server/details.json';
+import { of } from 'rxjs';
 import { CartComponent } from './cart.component';
 
 describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
+  let cartService: CartService;
   let debugElement: DebugElement;
   let item= data[0].foodMenu[0];
   let foodItem= Object.assign({item,quantity:1});
@@ -23,10 +25,9 @@ describe('CartComponent', () => {
   let routerSpy = { navigate: jasmine.createSpy('navigate') };
   
   const authServiceSpy = jasmine.createSpyObj(CartService, ['getProducts', 'addtoCart','removeCartItem','removeAllCart']);
-  let spy:any;
+  
   beforeEach(() => {
-    
-    TestBed.configureTestingModule({
+      TestBed.configureTestingModule({
       declarations: [CartComponent, AppComponent, HomeComponent],
       imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([
         { path: 'restaurants', component: RestaurantComponent },
@@ -40,11 +41,12 @@ describe('CartComponent', () => {
 
     });
 
-  beforeEach(() => {
+  beforeEach(inject([CartService], (r: CartService) => {
+    cartService=r;
     fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
-      });
+      }));
    
 
   it('should create', () => {
@@ -52,6 +54,15 @@ describe('CartComponent', () => {
     expect(component).toBeTruthy();
 
   });
+
+  it("should call getProducts and return list of cart items", async(() => {
+    const response: CartComponent[] = [];
+    spyOn(cartService, 'getProducts').and.returnValue(of(response))
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.products).toEqual(response);
+  }));
+
 
   it('stepUp Method is called', () => {
   component.stepUp(foodItem);

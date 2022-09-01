@@ -12,6 +12,7 @@ export class FoodMenuComponent implements OnInit {
   public MenuDetails: any;
   addButton: boolean = false;
   menuId: any;
+  static MenuDetails: any;
   constructor(public service: RestaurantService, private router: Router,
     private cartService: CartService, private actRoute: ActivatedRoute)
     { }

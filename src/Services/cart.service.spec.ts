@@ -1,15 +1,12 @@
-import { fakeAsync, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import { CartService } from './cart.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
-import { RestaurantService } from './restaurant-service';
+import { CartService } from './cart.service';
 
 describe('CartService', () => {
   let service: CartService;
   let product:any;
-  let cartItemList: any=[];
   
   beforeEach(() => {
     TestBed.configureTestingModule({imports: [HttpClientTestingModule, RouterTestingModule]}
@@ -22,6 +19,9 @@ describe('CartService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should add item to cart', () => {
+    service.addtoCart(product);  
+     });
 
   it('should remove all cart items', () => {
     service.removeAllCart();

@@ -7,7 +7,9 @@ export class FilterPipe implements PipeTransform {
 
   transform(value : any[], filterString: string, propName:string): any[] {
     const result:any =[];
+    
     if(!value || filterString==='' || propName ===''){
+      
       return value;
     }
     value.forEach((a:any)=>{
@@ -16,6 +18,10 @@ export class FilterPipe implements PipeTransform {
       }
       });
 
+      console.log(value)
+    console.log( filterString)
+    console.log(propName);
+    console.log(result);
     return result;
   }
 

@@ -24,7 +24,7 @@ describe('CartComponent', () => {
 
   let routerSpy = { navigate: jasmine.createSpy('navigate') };
   
-  const authServiceSpy = jasmine.createSpyObj(CartService, ['getProducts', 'addtoCart','removeCartItem','removeAllCart']);
+  const cartServiceSpy = jasmine.createSpyObj(CartService, ['getProducts', 'addtoCart','removeCartItem','removeAllCart']);
   
   beforeEach(() => {
       TestBed.configureTestingModule({
@@ -34,8 +34,7 @@ describe('CartComponent', () => {
           { path: 'checkout', component: CheckoutCartComponent }
       ]), ReactiveFormsModule],  
         providers: [
-  
-          { provide: AuthService, Router, useValue: authServiceSpy, routerSpy } ]
+            { provide: AuthService} ]
        
     });
 
@@ -74,9 +73,8 @@ describe('CartComponent', () => {
 it('stepDown Method is called', () => {
   const param: any = null
   component.stepDown(foodItem);
-     authServiceSpy.removeCartItem(param);
-    expect(authServiceSpy.removeCartItem).toHaveBeenCalled();   
-  
+    cartServiceSpy.removeCartItem(foodItem);
+         
 });
 
 
@@ -84,8 +82,8 @@ it('stepDown Method is called', () => {
 it('empty the cart on calling emptycart() method', () =>
 {
   component.emptyCart ();
-    authServiceSpy.removeAllCart();
-    expect(authServiceSpy.removeAllCart).toHaveBeenCalled();
+    cartServiceSpy.removeAllCart();
+    expect(cartServiceSpy.removeAllCart).toHaveBeenCalled();
 })
 
 it('should navigate to restaurants page on click of Shop More', () =>

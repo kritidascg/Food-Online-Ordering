@@ -7,6 +7,7 @@ import { AuthService } from 'src/security/auth.service';
 import { HomeComponent } from '../home/home.component';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -35,6 +36,14 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should execute onLogin() method', async() => {
+    const response: LoginComponent[] = [];
+    authServiceSpy.onLogin.and.returnValue(of(response));
+    component.ngOnInit();
+
+  }
+  );
 
   it('Check login button', () => {
     const btn = fixture.debugElement.nativeElement.querySelector('#login');
